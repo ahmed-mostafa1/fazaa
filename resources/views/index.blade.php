@@ -27,7 +27,7 @@
                     فزعة <span>للخدمات</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero" class="active">الرئيسية</a></li>
+                    <li><a href="#about-us" class="active">من نحن</a></li>
                     <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#steps">كيف نعمل</a></li>
                     <li><a href="#about">لماذا نحن</a></li>
@@ -49,7 +49,7 @@
                     <p>خدمات متكاملة لإنهاء الأوراق الثبوتية، التصديقات، والتراخيص. فريقنا متخصص في التخليص الإداري لتوفير وقتك وجهدك.</p>
                     <div class="cta-group">
                         <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                        <a href="#services" class="btn btn-outline" style="color: var(--white); border-color: var(--white); margin-right: 15px;">استكشف الخدمات</a>
+                        <a href="#services" class="btn btn-primary">استكشف الخدمات</a>
                     </div>
                 </div>
                 <div class="hero-visual fade-in delay-200">
@@ -60,7 +60,7 @@
                             <i class="fa-solid fa-wifi" style="opacity: 0.7;"></i>
                         </div>
                         <div class="doc-placeholder">
-                            <img src="https://picsum.photos/seed/saudiId/400/200" alt="Document Preview">
+                            <img src="{{ asset('img/id-card.png') }}" alt="Document Preview">
                             <div style="position: absolute; bottom: 10px; right: 15px; background: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                 طلب رقم: #99201
                             </div>
@@ -84,6 +84,76 @@
         </div>
     </section>
 
+    <!-- About Us Section -->
+    <section id="about-us" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>من نحن</h2>
+                <p>فزعة للخدمات الإلكترونية مكتب مستقل مرخّص، متخصص في تقديم الخدمات الحكومية والإلكترونية عن بُعد للأفراد وأصحاب المحلات، بشكل رسمي ومعتمد عبر التفويض الإلكتروني.</p>
+            </div>
+
+            <div class="about-cards fade-in delay-100">
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>الرؤية</h3>
+                    <p>أن نكون الوجهة الموثوقة التي يطمئن لها الأفراد وأصحاب الأعمال في إنهاء معاملاتهم الحكومية، عبر خدمات دقيقة وموثوقة ترتكز على الاحترافية والجودة.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <h3>الرسالة</h3>
+                    <p>التزامنا بخدمتكم هو أساس عملنا. نسعى لتقديم نتائج ملموسة وسريعة من خلال فهم احتياجاتكم، وتقديم حلول واستشارات قانونية وإجرائية تدعم رؤاكم وتحقق أهدافكم.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>قيمنا</h3>
+                    <ul class="about-list">
+                        <li><i class="fa-regular fa-circle-check"></i> الخصوصية والأمان</li>
+                        <li><i class="fa-regular fa-circle-check"></i> العلاقات طويلة الأمد</li>
+                        <li><i class="fa-regular fa-circle-check"></i> المهنية والاحترافية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- How It Works -->
+    <section id="steps" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 style="color: var(--white); border-color: var(--accent-color);">كيف نعمل؟</h2>
+                <p style="color: rgba(255,255,255,0.7);">ثلاث خطوات بسيطة بينك وبين إنهاء معاملتك</p>
+            </div>
+
+            <div class="steps-container fade-in">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>أرسل طلبك</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">تواصل معنا وارفع المستندات المطلوبة عبر واتساب أو النموذج.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>المعالجة</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">يقوم فريقنا بمراجعة الأوراق وتقديمها للجهات الحكومية فوراً.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>الاستلام</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">تستلم نتيجة المعاملة (إلكترونياً أو توصيل ورقي) بكل يسر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Services Section -->
     <section id="services" class="section-padding">
         <div class="container">
@@ -96,7 +166,8 @@
                 <!-- Service 1 -->
                 <div class="service-card fade-in delay-100">
                     <div class="service-icon">
-                        <i class="fa-solid fa-passport"></i>
+                        <!-- <i class="fa-solid fa-passport"></i> -->
+                        <img src="{{ asset('assets/img/commerce.png') }}" alt="commerce">
                     </div>
                     <h3>الجنسيات والإقامات</h3>
                     <p>تجديد الإقامات، إصدار وتجديد جوازات السفر، وخدمات نقل الكفالة عبر منصة أبشر.</p>
@@ -150,73 +221,6 @@
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section id="steps" class="section-padding">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 style="color: var(--white); border-color: var(--accent-color);">كيف نعمل؟</h2>
-                <p style="color: rgba(255,255,255,0.7);">ثلاث خطوات بسيطة بينك وبين إنهاء معاملتك</p>
-            </div>
-
-            <div class="steps-container fade-in">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>أرسل طلبك</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">تواصل معنا وارفع المستندات المطلوبة عبر واتساب أو النموذج.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>المعالجة</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">يقوم فريقنا بمراجعة الأوراق وتقديمها للجهات الحكومية فوراً.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>الاستلام</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">تستلم نتيجة المعاملة (إلكترونياً أو توصيل ورقي) بكل يسر.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about-us" class="section-padding">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>من نحن</h2>
-                <p>فزعة للخدمات الإلكترونية مكتب مستقل مرخّص، متخصص في تقديم الخدمات الحكومية والإلكترونية عن بُعد للأفراد وأصحاب المحلات، بشكل رسمي ومعتمد عبر التفويض الإلكتروني.</p>
-            </div>
-
-            <div class="about-cards fade-in delay-100">
-                <div class="about-card">
-                    <div class="about-card-icon">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3>الرؤية</h3>
-                    <p>أن نكون الوجهة الموثوقة التي يطمئن لها الأفراد وأصحاب الأعمال في إنهاء معاملاتهم الحكومية، عبر خدمات دقيقة وموثوقة ترتكز على الاحترافية والجودة.</p>
-                </div>
-
-                <div class="about-card">
-                    <div class="about-card-icon">
-                        <i class="fa-solid fa-gift"></i>
-                    </div>
-                    <h3>الرسالة</h3>
-                    <p>التزامنا بخدمتكم هو أساس عملنا. نسعى لتقديم نتائج ملموسة وسريعة من خلال فهم احتياجاتكم، وتقديم حلول واستشارات قانونية وإجرائية تدعم رؤاكم وتحقق أهدافكم.</p>
-                </div>
-
-                <div class="about-card">
-                    <div class="about-card-icon">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3>قيمنا</h3>
-                    <ul class="about-list">
-                        <li><i class="fa-regular fa-circle-check"></i> الخصوصية والأمان</li>
-                        <li><i class="fa-regular fa-circle-check"></i> العلاقات طويلة الأمد</li>
-                        <li><i class="fa-regular fa-circle-check"></i> المهنية والاحترافية</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- About / Features Section -->
     <section id="about" class="section-padding">
@@ -346,7 +350,7 @@
             <div class="footer-grid">
                 <div>
                     <a href="#" class="footer-logo">
-                        <i class="fa-solid fa-file-shield"></i> الشيحري
+                        <i class="fa-solid fa-file-shield"></i> فزعة
                     </a>
                     <p>خدمات حكومية متخصصة نهدف لتبسيط الإجراءات وتوفير الوقت والمجهود على عملائنا الكرام.</p>
                 </div>
@@ -375,7 +379,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2023 مكتب الشيحري للخدمات الحكومية</p>
+                <p>جميع الحقوق محفوظة &copy; 2023 مكتب فزعة للخدمات الحكومية</p>
             </div>
         </div>
     </footer>
