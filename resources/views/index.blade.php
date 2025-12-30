@@ -135,19 +135,31 @@
 
             <div class="steps-container fade-in">
                 <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>أرسل طلبك</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">تواصل معنا وارفع المستندات المطلوبة عبر واتساب أو النموذج.</p>
+                    <div class="step-number">01</div>
+                    <p>تواصل معنا وحدد الخدمة المطلوبة.</p>
                 </div>
+
                 <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>المعالجة</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">يقوم فريقنا بمراجعة الأوراق وتقديمها للجهات الحكومية فوراً.</p>
+                    <div class="step-number">02</div>
+                    <p>نوضح لك التفاصيل والتكلفة.</p>
                 </div>
+
                 <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>الاستلام</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">تستلم نتيجة المعاملة (إلكترونياً أو توصيل ورقي) بكل يسر.</p>
+                    <div class="step-number">03</div>
+                    <p>يتم التفويض الإلكتروني بشكل رسمي..</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <p>ننجز الخدمة ونرسل لك إثبات التنفيذ.</p>
+                </div>
+            </div>
+            <div class="notes">
+                <div class="note fade-in delay-100" style="color: yellow; text-align: center; margin-top: 20px;">
+                    <span style="color:yellow">ملحوظة هامة</span>
+                    <p>جميع خدماتنا تتم عن بُعد وبشكل رسمي عبر التفويض الإلكتروني،
+ مع التزام تام بسرية البيانات وخصوصية العملاء.
+</p>
                 </div>
             </div>
         </div>
@@ -176,6 +188,7 @@
                         <li>شطب السجل</li>
                         <li>إضافة اسم تجاري</li>
                     </ul>
+                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
                 </div>
                 
                 <!-- Qiwa -->
@@ -192,6 +205,7 @@
                         <li>إصدار رخصة عمل</li>
                         <li>فتح حساب وتفعيل منصة قوى</li>
                     </ul>
+                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
                 </div>
                 
                 <!-- Zakat -->
@@ -200,10 +214,12 @@
                         <img src="{{ asset('assets/img/zakat.png') }}" class="service-icon" alt="zakat">
                     </div>
                     <ul class="service-list">
-                        <li>تصديق الشهادات من وزارة الخارجية والسفارات</li>
-                        <li>معادلة المؤهلات الجامعية</li>
+                        <li>تسجيل المنشأة في زاتكا</li>
+                        <li>رفع دعوى على لجنة المخالفات الضريبية</li>
+                        <li>تقديم الإقرارات الضريبية</li>
+                        <li>التسجيل في ضريبة القيمة المضافة</li>
                     </ul>
-                    <p>إصدار هويات وطنية، شهادات ميلاد، وفيات، وتسجيل الزواج والطلاق.</p>
+                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
                 </div>
 
                 <!-- Service 4 -->
@@ -304,9 +320,6 @@
                     </div>
 
                     <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">تواصل معنا الآن</a>
-                </div>
-                <div class="about-img fade-in delay-200">
-                    <img src="https://picsum.photos/seed/officeKsa/600/500" alt="Modern Office">
                 </div>
             </div>
         </div>
@@ -448,12 +461,10 @@
     <style>
         .whatsapp-float {
             position: fixed;
-            right: 18px;
-            bottom: 18px;
-            right: calc(18px + env(safe-area-inset-right));
-            bottom: calc(18px + env(safe-area-inset-bottom));
-            width: 56px;
-            height: 56px;
+            left: 50px;
+            bottom: 50px;
+            width: 70px;
+            height: 70px;
             border-radius: 999px;
             display: grid;
             place-items: center;
@@ -478,6 +489,31 @@
 
         .whatsapp-float.is-clicked {
             animation: whatsapp-pop 520ms ease-out;
+        }
+
+        .whatsapp-float::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #25d366;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: whatsapp-pulse-ring 2s infinite;
+        }
+
+        @keyframes whatsapp-pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
         }
 
         @keyframes whatsapp-pop {

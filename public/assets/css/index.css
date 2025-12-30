@@ -416,7 +416,7 @@
         .service-icon {
             width: 150px;
             overflow: hidden;
-            height: 150px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -854,9 +854,9 @@
     margin-bottom: 10px;
     position: relative;
     padding-right: 20px;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    opacity: 0; /* Hidden initially for animation */
+    font-size: 1.2rem;
+    color: #000;
+    opacity: 0;
     transform: translateY(10px);
     animation: fadeInUp 0.5s ease forwards;
 }
@@ -868,7 +868,7 @@
     position: absolute;
     right: 0;
     top: 5px;   
-    color: var(--primary-color);
+    color: #000;
     font-size: 0.8rem;
 }
 
