@@ -223,58 +223,58 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="service-card fade-in delay-100">
+                <!-- <div class="service-card fade-in delay-100">
                     <div class="service-icon">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
                     <h3>التراخيص التجارية</h3>
                     <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                </div>
+                </div> -->
 
                 <!-- Service 5 -->
-                <div class="service-card fade-in delay-200">
+                <!-- <div class="service-card fade-in delay-200">
                     <div class="service-icon">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
                     <h3>خدمات المرور</h3>
                     <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                </div>
+                </div> -->
 
                 <!-- Service 6 -->
-                <div class="service-card fade-in delay-300">
+                <!-- <div class="service-card fade-in delay-300">
                     <div class="service-icon">
                         <i class="fa-solid fa-users-line"></i>
                     </div>
                     <h3>استقدام العمالة</h3>
                     <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                </div>
+                </div> -->
 
                  <!-- Service 7 -->
-                <div class="service-card fade-in delay-100">
+                <!-- <div class="service-card fade-in delay-100">
                     <div class="service-icon">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
                     <h3>التراخيص التجارية</h3>
                     <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                </div>
+                </div> -->
 
                 <!-- Service 8 -->
-                <div class="service-card fade-in delay-200">
+                <!-- <div class="service-card fade-in delay-200">
                     <div class="service-icon">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
                     <h3>خدمات المرور</h3>
                     <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                </div>
+                </div> -->
 
                 <!-- Service 9 -->
-                <div class="service-card fade-in delay-300">
+                <!-- <div class="service-card fade-in delay-300">
                     <div class="service-icon">
                         <i class="fa-solid fa-users-line"></i>
                     </div>
                     <h3>استقدام العمالة</h3>
                     <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -320,6 +320,9 @@
                     </div>
 
                     <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">تواصل معنا الآن</a>
+                </div>
+                <div class="about-img fade-in delay-200">
+                    <img src="https://picsum.photos/seed/officeKsa/600/500" alt="Modern Office">
                 </div>
             </div>
         </div>
