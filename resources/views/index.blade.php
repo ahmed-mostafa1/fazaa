@@ -163,31 +163,46 @@
             </div>
             
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Commerce -->
                 <div class="service-card fade-in delay-100">
                     <div class="service-icon">
-                        <!-- <i class="fa-solid fa-passport"></i> -->
-                        <img src="{{ asset('assets/img/commerce.png') }}" alt="commerce">
+                        <img src="{{ asset('assets/img/commerce.png') }}" class="service-icon" alt="commerce">
                     </div>
-                    <h3>الجنسيات والإقامات</h3>
-                    <p>تجديد الإقامات، إصدار وتجديد جوازات السفر، وخدمات نقل الكفالة عبر منصة أبشر.</p>
+                    <ul class="service-list">
+                        <li>إصدار سجل تجاري رئيسي</li>
+                        <li>إصدار سجل تجاري فرعي</li>
+                        <li>توثيق علامة تجارية</li>
+                        <li>تعديل بيانات السجل</li>
+                        <li>شطب السجل</li>
+                        <li>إضافة اسم تجاري</li>
+                    </ul>
                 </div>
                 
-                <!-- Service 2 -->
+                <!-- Qiwa -->
                 <div class="service-card fade-in delay-200">
                     <div class="service-icon">
-                        <i class="fa-solid fa-stamp"></i>
+                        <img src="{{ asset('assets/img/qiwa.png') }}" class="service-icon" alt="qiwa">
                     </div>
-                    <h3>التصديقات والمعادلات</h3>
-                    <p>تصديق الشهادات من وزارة الخارجية والسفارات، ومعادلة المؤهلات الجامعية.</p>
+                    <ul class="service-list">
+                        <li>خدمة إصدار التأشيرات</li>
+                        <li>تعديل المهن للعمالة</li>
+                        <li>التبليغ عن العمالة</li>
+                        <li>إصدار شهادة السعودة</li>
+                        <li>نقل خدمات العمالة</li>
+                        <li>إصدار رخصة عمل</li>
+                        <li>فتح حساب وتفعيل منصة قوى</li>
+                    </ul>
                 </div>
                 
-                <!-- Service 3 -->
+                <!-- Zakat -->
                 <div class="service-card fade-in delay-300">
                     <div class="service-icon">
-                        <i class="fa-solid fa-id-card"></i>
+                        <img src="{{ asset('assets/img/zakat.png') }}" class="service-icon" alt="zakat">
                     </div>
-                    <h3>الأحوال المدنية</h3>
+                    <ul class="service-list">
+                        <li>تصديق الشهادات من وزارة الخارجية والسفارات</li>
+                        <li>معادلة المؤهلات الجامعية</li>
+                    </ul>
                     <p>إصدار هويات وطنية، شهادات ميلاد، وفيات، وتسجيل الزواج والطلاق.</p>
                 </div>
 
@@ -210,6 +225,33 @@
                 </div>
 
                 <!-- Service 6 -->
+                <div class="service-card fade-in delay-300">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <h3>استقدام العمالة</h3>
+                    <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
+                </div>
+
+                 <!-- Service 7 -->
+                <div class="service-card fade-in delay-100">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3>التراخيص التجارية</h3>
+                    <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card fade-in delay-200">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3>خدمات المرور</h3>
+                    <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
+                </div>
+
+                <!-- Service 9 -->
                 <div class="service-card fade-in delay-300">
                     <div class="service-icon">
                         <i class="fa-solid fa-users-line"></i>
