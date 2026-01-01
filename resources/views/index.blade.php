@@ -549,30 +549,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .tab-button {
-            background: none;
-            border: none;
-            padding: 15px 25px;
-            margin: 0 10px;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .tab-button:hover {
-            color: var(--white);
-        }
-
-        .tab-button.active {
-            color: var(--accent-color);
-            border-bottom-color: var(--accent-color);
-        }
-
         .tab-pane {
             display: none;
         }
