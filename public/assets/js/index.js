@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     `تفاصيل الطلب: ${details}`
                 ].join('\n');
 
-                const whatsappUrl = `https://wa.me/966534018865?text=${encodeURIComponent(message)}`;
+                const baseWhatsapp = contactForm.dataset.whatsapp || 'https://wa.me/966534018865';
+                const whatsappUrl = `${baseWhatsapp}?text=${encodeURIComponent(message)}`;
 
                 // Try opening in a new tab; fallback to current tab if blocked
                 const opened = window.open(whatsappUrl, '_blank');

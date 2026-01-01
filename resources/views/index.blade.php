@@ -17,6 +17,18 @@
 
 </head>
 <body>
+@php
+    use App\Models\Setting;
+    use App\Support\HomepageDefaults;
+
+    $hero = Setting::getValue('hero', HomepageDefaults::hero());
+    $about = Setting::getValue('about', HomepageDefaults::about());
+    $stepsData = Setting::getValue('steps', HomepageDefaults::steps());
+    $services = Setting::getValue('services', HomepageDefaults::services());
+    $contact = Setting::getValue('contact', HomepageDefaults::contact());
+    $whatsNumber = preg_replace('/\D+/', '', $contact['whatsapp_display'] ?? '966534018865');
+    $whatsappLink = $whatsNumber ? "https://wa.me/{$whatsNumber}" : 'https://wa.me/966534018865';
+@endphp
 
     <!-- Header -->
     <header id="header">
@@ -45,11 +57,15 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
-                    <h1>إنهاء معاملاتك الحكومية <br> بـ <span>سهولة وسرعة</span></h1>
-                    <p>خدمات متكاملة لإنهاء الأوراق الثبوتية، التصديقات، والتراخيص. فريقنا متخصص في التخليص الإداري لتوفير وقتك وجهدك.</p>
+                    <h1>{{ $hero['title'] ?? '' }} <br> بـ <span>{{ $hero['highlight'] ?? '' }}</span></h1>
+                    <p>{{ $hero['description'] ?? '' }}</p>
                     <div class="cta-group">
-                        <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                        <a href="#services" class="btn btn-primary">استكشف الخدمات</a>
+                        @if (!empty($hero['cta_primary_text']))
+                            <a href="{{ $hero['cta_primary_link'] ?? '#contact' }}" class="btn btn-primary">{{ $hero['cta_primary_text'] }}</a>
+                        @endif
+                        @if (!empty($hero['cta_secondary_text']))
+                            <a href="{{ $hero['cta_secondary_link'] ?? '#services' }}" class="btn btn-primary">{{ $hero['cta_secondary_text'] }}</a>
+                        @endif
                     </div>
                 </div>
                 <div class="hero-visual fade-in delay-200">
@@ -89,7 +105,7 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2>من نحن</h2>
-                <p>فزعة للخدمات الإلكترونية مكتب مستقل مرخّص، متخصص في تقديم الخدمات الحكومية والإلكترونية عن بُعد للأفراد وأصحاب المحلات، بشكل رسمي ومعتمد عبر التفويض الإلكتروني.</p>
+                <p>{{ $about['intro'] ?? '' }}</p>
             </div>
 
             <div class="about-cards fade-in delay-100">
@@ -97,27 +113,27 @@
                     <div class="about-card-icon">
                         <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    <h3>الرؤية</h3>
-                    <p>أن نكون الوجهة الموثوقة التي يطمئن لها الأفراد وأصحاب الأعمال في إنهاء معاملاتهم الحكومية، عبر خدمات دقيقة وموثوقة ترتكز على الاحترافية والجودة.</p>
+                    <h3>{{ $about['vision_title'] ?? '' }}</h3>
+                    <p>{{ $about['vision_text'] ?? '' }}</p>
                 </div>
 
                 <div class="about-card">
                     <div class="about-card-icon">
                         <i class="fa-solid fa-gift"></i>
                     </div>
-                    <h3>الرسالة</h3>
-                    <p>التزامنا بخدمتكم هو أساس عملنا. نسعى لتقديم نتائج ملموسة وسريعة من خلال فهم احتياجاتكم، وتقديم حلول واستشارات قانونية وإجرائية تدعم رؤاكم وتحقق أهدافكم.</p>
+                    <h3>{{ $about['mission_title'] ?? '' }}</h3>
+                    <p>{{ $about['mission_text'] ?? '' }}</p>
                 </div>
 
                 <div class="about-card">
                     <div class="about-card-icon">
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h3>قيمنا</h3>
+                    <h3>{{ $about['values_title'] ?? '' }}</h3>
                     <ul class="about-list">
-                        <li><i class="fa-regular fa-circle-check"></i> الخصوصية والأمان</li>
-                        <li><i class="fa-regular fa-circle-check"></i> العلاقات طويلة الأمد</li>
-                        <li><i class="fa-regular fa-circle-check"></i> المهنية والاحترافية</li>
+                        @foreach ($about['values_list'] ?? [] as $value)
+                            <li><i class="fa-regular fa-circle-check"></i> {{ $value }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -129,37 +145,22 @@
     <section id="steps" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 style="color: var(--white); border-color: var(--accent-color);">كيف نعمل؟</h2>
-                <p style="color: rgba(255,255,255,0.7);">أربع خطوات بسيطة بينك وبين إنهاء معاملتك</p>
+                <h2 style="color: var(--white); border-color: var(--accent-color);">{{ $stepsData['title'] ?? '' }}</h2>
+                <p style="color: rgba(255,255,255,0.7);">{{ $stepsData['subtitle'] ?? '' }}</p>
             </div>
 
             <div class="steps-container fade-in">
-                <div class="step-item">
-                    <div class="step-number">01</div>
-                    <p>تواصل معنا وحدد الخدمة المطلوبة.</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">02</div>
-                    <p>نوضح لك التفاصيل والتكلفة.</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">03</div>
-                    <p>يتم التفويض الإلكتروني بشكل رسمي..</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">04</div>
-                    <p>ننجز الخدمة ونرسل لك إثبات التنفيذ.</p>
-                </div>
+                @foreach ($stepsData['steps'] ?? [] as $step)
+                    <div class="step-item">
+                        <div class="step-number">{{ $step['number'] ?? '' }}</div>
+                        <p>{{ $step['text'] ?? '' }}</p>
+                    </div>
+                @endforeach
             </div>
             <div class="notes">
                 <div class="note fade-in delay-100" style="color: yellow; text-align: center; margin-top: 20px;">
-                    <span style="color:yellow">ملحوظة هامة</span>
-                    <p>جميع خدماتنا تتم عن بُعد وبشكل رسمي عبر التفويض الإلكتروني،
- مع التزام تام بسرية البيانات وخصوصية العملاء.
-</p>
+                    <span style="color:yellow">{{ $stepsData['note_title'] ?? '' }}</span>
+                    <p>{{ $stepsData['note_text'] ?? '' }}</p>
                 </div>
             </div>
         </div>
@@ -176,178 +177,45 @@
             
             <div class="tabs">
                 <div class="tab-buttons">
-                    <button class="btn tab-button active" data-tab="tab1">خدمات التجار</button>
-                    <button class="btn tab-button" data-tab="tab2">المتاجر الإلكترونية</button>
-                    <button class="btn tab-button" data-tab="tab3">خدمات اﻷفراد</button>
+                    @foreach ($services['tabs'] ?? [] as $index => $tab)
+                        <button class="btn tab-button {{ $index === 0 ? 'active' : '' }}" data-tab="{{ $tab['id'] }}">{{ $tab['title'] ?? '' }}</button>
+                    @endforeach
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="tab1">
-                        <div class="services-grid">
-                            <!-- Commerce -->
-                            <div class="service-card fade-in delay-100">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/commerce.png') }}" class="service-icon" alt="commerce">
-                                </div>
-                                <ul class="service-list">
-                                    <li>إصدار سجل تجاري رئيسي</li>
-                                    <li>إصدار سجل تجاري فرعي</li>
-                                    <li>توثيق علامة تجارية</li>
-                                    <li>تعديل بيانات السجل</li>
-                                    <li>شطب السجل</li>
-                                    <li>إضافة اسم تجاري</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            
-                            <!-- Qiwa -->
-                            <div class="service-card fade-in delay-200">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/qiwa.png') }}" class="service-icon" alt="qiwa">
-                                </div>
-                                <ul class="service-list">
-                                    <li>خدمة إصدار التأشيرات</li>
-                                    <li>تعديل المهن للعمالة</li>
-                                    <li>التبليغ عن العمالة</li>
-                                    <li>إصدار شهادة السعودة</li>
-                                    <li>نقل خدمات العمالة</li>
-                                    <li>إصدار رخصة عمل</li>
-                                    <li>فتح حساب وتفعيل منصة قوى</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            
-                            <!-- Zakat -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/zakat.png') }}" class="service-icon" alt="zakat">
-                                </div>
-                                <ul class="service-list">
-                                    <li>تسجيل المنشأة في زاتكا</li>
-                                    <li>رفع دعوى على لجنة المخالفات الضريبية</li>
-                                    <li>تقديم الإقرارات الضريبية</li>
-                                    <li>التسجيل في ضريبة القيمة المضافة</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-                            <!-- Modad -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/modad.png') }}" class="service-icon" alt="modad">
-                                </div>
-                                <ul class="service-list">
-                                    <li>توثيق عقود الموظفين</li>
-                                    <li>متابعة حالة حماية الأجور</li>
-                                    <li>تسجيل المنشأة في النظام</li>
-                                    <li>رفع ملف الرواتب الشهري</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-                            <!-- Baladi -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/baladi.png') }}" class="service-icon" alt="baladi">
-                                </div>
-                                <ul class="service-list">
-                                    <li>إصدار / إلغاء  رخصة بلدية</li>
-                                    <li>استخراج تصاريح :(لوحات – فعاليات – عربات)</li>
-                                    <li>إعتراض على مخالفة الرقابة</li>
-                                    <li>إستخراج الشهادة الصحية للعمالة </li>
-                                    <li>إصدار تصريح محل 24 ساعة </li>
-                                    <li>عقود الصيانة للسلامة </li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-
-                            <!-- ejar -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/ejar.png') }}" class="service-icon" alt="ejar">
-                                </div>
-                                <ul class="service-list">
-                                    <li>توثيق عقد إيجار تجاري</li>
-                                    <li>توثيق عقد إيجار سكني</li>
-                                    <li>تجديد / إنهاء العقود</li>
-                                    <li>إستخراج رخصة مسوق عقار ي</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-
-
-                            <!-- gosi -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/gosi.png') }}" class="service-icon" alt="gosi">
-                                </div>
-                                <ul class="service-list">
-                                    <li>تسجيل موظف جديد</li>
-                                    <li>استخراج شهادة اشتراك</li>
-                                    <li>فتح ملف منشأة</li>
-                                    <li>تعديل راتب أو بيانات</li>
-                                    <li>متابعة الالتزام</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-                            <!-- sbl -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/sbl.png') }}" class="service-icon" alt="sbl">
-                                </div>
-                                <ul class="service-list">
-                                    <li>تسجيل عنوان وطني للمنشأة</li>
-                                    <li>تحديث العنوان</li>
-                                    <li>إصدار إثبات عنوان</li>
-                                    <li>ربط العنوان بالجهات الحكومية</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-                            <!-- electricity -->
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <img src="{{ asset('assets/img/electricity.png') }}" class="service-icon" alt="electricity">
-                                </div>
-                                <ul class="service-list">
-                                    <li>طلب عداد كهربائي</li>
-                                    <li>طلب إزالة عداد</li>
-                                    <li>نقل ملكية عداد</li>
-                                    <li>سداد الفواتير</li>
-                                    <li>متابعة الالتزام</li>
-                                    <li>طلب عداد إضافي</li>
-                                </ul>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab2">
-                        <div class="services-grid">
-                            <div class="service-card fade-in delay-100">
-                                <h3>سيتم إضافة الخدمات المتاحة هنا قريبا</h3>
-                                <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
+                    @foreach ($services['tabs'] ?? [] as $index => $tab)
+                        <div class="tab-pane {{ $index === 0 ? 'active' : '' }}" id="{{ $tab['id'] }}">
+                            <div class="services-grid">
+                                @forelse ($tab['cards'] ?? [] as $cardIndex => $card)
+                                    <div class="service-card fade-in delay-{{ 100 + ($cardIndex * 50) }}">
+                                        @if (!empty($card['icon']))
+                                            <div class="service-icon">
+                                                <img src="{{ asset($card['icon']) }}" class="service-icon" alt="{{ $card['title'] ?? 'service' }}">
+                                            </div>
+                                        @endif
+                                        @if (!empty($card['title']))
+                                            <h3>{{ $card['title'] }}</h3>
+                                        @endif
+                                        @if (!empty($card['description']))
+                                            <p>{{ $card['description'] }}</p>
+                                        @endif
+                                        @if (!empty($card['items']))
+                                            <ul class="service-list">
+                                                @foreach ($card['items'] as $item)
+                                                    <li>{{ $item }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                        <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                                    </div>
+                                @empty
+                                    <div class="service-card fade-in delay-100">
+                                        <h3>لا توجد خدمات لهذا التبويب حالياً</h3>
+                                        <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane" id="tab3">
-                        <div class="services-grid">
-                            <div class="service-card fade-in delay-100">
-                                <h3>سيتم إضافة الخدمات المتاحة هنا قريبا</h3>
-                                <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -418,7 +286,7 @@
                         <i class="fa-solid fa-phone-volume"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">رقم الجوال</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">+966534018865</p>
+                            <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['phone_display'] ?? '' }}</p>
                         </div>
                     </div>
 
@@ -426,7 +294,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">واتساب</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">+966534018865</p>
+                            <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['whatsapp_display'] ?? '' }}</p>
                         </div>
                     </div>
 
@@ -434,13 +302,13 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">العنوان</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">الرياض، حي العليا، شارع التحلية</p>
+                            <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['address'] ?? '' }}</p>
                         </div>
                     </div>
 
                     <div style="margin-top: 50px;">
                         <p style="opacity: 0.8; font-size: 0.9rem;">ساعات العمل:</p>
-                        <p style="color: var(--white); font-weight: bold;">السبت - الخميس: 9 ص - 9 م</p>
+                        <p style="color: var(--white); font-weight: bold;">{{ $contact['hours'] ?? '' }}</p>
                     </div>
                 </div>
 
@@ -458,9 +326,9 @@
                             <label style="font-weight: 600;">نوع الخدمة</label>
                             <select name="serviceType" id="serviceType" class="form-control" required>
                                 <option value="" selected disabled>اختر نوع الخدمة...</option>
-                                <option>خدمات التجار</option>
-                                <option>خدمات المتاجر اﻹلكترونية</option>
-                                <option>خدمات اﻷفراد</option>
+                                @foreach ($services['tabs'] ?? [] as $tab)
+                                    <option>{{ $tab['title'] ?? '' }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
@@ -517,12 +385,12 @@
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fa-solid fa-circle-check"></i>
-        <span>تم استلام طلبك بنجاح! سنتواصل معك قريباً.</span>
+        <span>{{ $contact['toast'] ?? 'تم استلام طلبك بنجاح! سنتواصل معك قريباً.' }}</span>
     </div>
 
     <!-- Floating WhatsApp -->
-    <a
-        href="https://wa.me/966534018865"
+    <
+        href="{{ $whatsappLink }}"
         class="whatsapp-float"
         id="whatsappFloat"
         target="_blank"
@@ -531,7 +399,7 @@
         title="واتساب"
     >
         <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    </>
 
     <style>
         .whatsapp-float {
