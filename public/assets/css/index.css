@@ -149,6 +149,38 @@
             color: var(--white);
         }
 
+
+       
+        .tab-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: green;
+            box-shadow: 0 4px 15px rgba(0, 108, 53, 0.3);
+        }
+
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--accent-color);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .tab-button:hover::before {
+            width: 100%;
+        }
+
+        .tab-button:hover {
+            box-shadow: 0 6px 20px rgba(0, 108, 53, 0.5);
+            transform: translateY(-2px);
+        }
+
+
+
+
         /* --- Header & Nav --- */
         header {
             position: fixed;

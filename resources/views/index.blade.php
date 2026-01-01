@@ -130,7 +130,7 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2 style="color: var(--white); border-color: var(--accent-color);">كيف نعمل؟</h2>
-                <p style="color: rgba(255,255,255,0.7);">ثلاث خطوات بسيطة بينك وبين إنهاء معاملتك</p>
+                <p style="color: rgba(255,255,255,0.7);">أربع خطوات بسيطة بينك وبين إنهاء معاملتك</p>
             </div>
 
             <div class="steps-container fade-in">
@@ -174,107 +174,120 @@
                 <p>نغطي كافة احتياجاتك من الخدمات الحكومية الإلكترونية والورقية</p>
             </div>
             
-            <div class="services-grid">
-                <!-- Commerce -->
-                <div class="service-card fade-in delay-100">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/img/commerce.png') }}" class="service-icon" alt="commerce">
-                    </div>
-                    <ul class="service-list">
-                        <li>إصدار سجل تجاري رئيسي</li>
-                        <li>إصدار سجل تجاري فرعي</li>
-                        <li>توثيق علامة تجارية</li>
-                        <li>تعديل بيانات السجل</li>
-                        <li>شطب السجل</li>
-                        <li>إضافة اسم تجاري</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="btn tab-button active" data-tab="tab1">خدمات التجار</button>
+                    <button class="btn tab-button" data-tab="tab2">المتاجر الإلكترونية</button>
+                    <button class="btn tab-button" data-tab="tab3">خدمات اﻷفراد</button>
                 </div>
-                
-                <!-- Qiwa -->
-                <div class="service-card fade-in delay-200">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/img/qiwa.png') }}" class="service-icon" alt="qiwa">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <div class="services-grid">
+                            <!-- Commerce -->
+                            <div class="service-card fade-in delay-100">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/commerce.png') }}" class="service-icon" alt="commerce">
+                                </div>
+                                <ul class="service-list">
+                                    <li>إصدار سجل تجاري رئيسي</li>
+                                    <li>إصدار سجل تجاري فرعي</li>
+                                    <li>توثيق علامة تجارية</li>
+                                    <li>تعديل بيانات السجل</li>
+                                    <li>شطب السجل</li>
+                                    <li>إضافة اسم تجاري</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            
+                            <!-- Qiwa -->
+                            <div class="service-card fade-in delay-200">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/qiwa.png') }}" class="service-icon" alt="qiwa">
+                                </div>
+                                <ul class="service-list">
+                                    <li>خدمة إصدار التأشيرات</li>
+                                    <li>تعديل المهن للعمالة</li>
+                                    <li>التبليغ عن العمالة</li>
+                                    <li>إصدار شهادة السعودة</li>
+                                    <li>نقل خدمات العمالة</li>
+                                    <li>إصدار رخصة عمل</li>
+                                    <li>فتح حساب وتفعيل منصة قوى</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            
+                            <!-- Zakat -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/zakat.png') }}" class="service-icon" alt="zakat">
+                                </div>
+                                <ul class="service-list">
+                                    <li>تسجيل المنشأة في زاتكا</li>
+                                    <li>رفع دعوى على لجنة المخالفات الضريبية</li>
+                                    <li>تقديم الإقرارات الضريبية</li>
+                                    <li>التسجيل في ضريبة القيمة المضافة</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="service-list">
-                        <li>خدمة إصدار التأشيرات</li>
-                        <li>تعديل المهن للعمالة</li>
-                        <li>التبليغ عن العمالة</li>
-                        <li>إصدار شهادة السعودة</li>
-                        <li>نقل خدمات العمالة</li>
-                        <li>إصدار رخصة عمل</li>
-                        <li>فتح حساب وتفعيل منصة قوى</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                    <div class="tab-pane" id="tab2">
+                        <div class="services-grid">
+                            <div class="service-card fade-in delay-100">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <h3>التراخيص التجارية</h3>
+                                <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            <div class="service-card fade-in delay-200">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-car-side"></i>
+                                </div>
+                                <h3>خدمات المرور</h3>
+                                <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-users-line"></i>
+                                </div>
+                                <h3>استقدام العمالة</h3>
+                                <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <div class="services-grid">
+                            <div class="service-card fade-in delay-100">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <h3>التراخيص التجارية</h3>
+                                <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            <div class="service-card fade-in delay-200">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-car-side"></i>
+                                </div>
+                                <h3>خدمات المرور</h3>
+                                <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <i class="fa-solid fa-users-line"></i>
+                                </div>
+                                <h3>استقدام العمالة</h3>
+                                <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Zakat -->
-                <div class="service-card fade-in delay-300">
-                    <div class="service-icon">
-                        <img src="{{ asset('assets/img/zakat.png') }}" class="service-icon" alt="zakat">
-                    </div>
-                    <ul class="service-list">
-                        <li>تسجيل المنشأة في زاتكا</li>
-                        <li>رفع دعوى على لجنة المخالفات الضريبية</li>
-                        <li>تقديم الإقرارات الضريبية</li>
-                        <li>التسجيل في ضريبة القيمة المضافة</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                </div>
-
-                <!-- Service 4 -->
-                <!-- <div class="service-card fade-in delay-100">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-file-contract"></i>
-                    </div>
-                    <h3>التراخيص التجارية</h3>
-                    <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                </div> -->
-
-                <!-- Service 5 -->
-                <!-- <div class="service-card fade-in delay-200">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
-                    <h3>خدمات المرور</h3>
-                    <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                </div> -->
-
-                <!-- Service 6 -->
-                <!-- <div class="service-card fade-in delay-300">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-users-line"></i>
-                    </div>
-                    <h3>استقدام العمالة</h3>
-                    <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                </div> -->
-
-                 <!-- Service 7 -->
-                <!-- <div class="service-card fade-in delay-100">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-file-contract"></i>
-                    </div>
-                    <h3>التراخيص التجارية</h3>
-                    <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                </div> -->
-
-                <!-- Service 8 -->
-                <!-- <div class="service-card fade-in delay-200">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
-                    <h3>خدمات المرور</h3>
-                    <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                </div> -->
-
-                <!-- Service 9 -->
-                <!-- <div class="service-card fade-in delay-300">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-users-line"></i>
-                    </div>
-                    <h3>استقدام العمالة</h3>
-                    <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                </div> -->
             </div>
         </div>
     </section>
@@ -524,6 +537,49 @@
             35% { transform: scale(1.12); }
             100% { transform: scale(1); }
         }
+
+        .tabs {
+            width: 100%;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            color: var(--white);
+        }
+
+        .tab-button.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
     </style>
 
     <script src="{{ asset('assets/js/index.js') }}" defer></script>
@@ -539,6 +595,25 @@
                 button.classList.add('is-clicked');
             });
         })();
+
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding pane
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
     </script>
 
 </body>
