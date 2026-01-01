@@ -53,6 +53,8 @@
             <a href="{{ route('admin.steps') }}" class="{{ request()->routeIs('admin.steps') ? 'active' : '' }}">قسم كيف نعمل</a>
             <a href="{{ route('admin.services') }}" class="{{ request()->routeIs('admin.services') ? 'active' : '' }}">قسم الخدمات</a>
             <a href="{{ route('admin.contact') }}" class="{{ request()->routeIs('admin.contact') ? 'active' : '' }}">قسم التواصل</a>
+            <a href="{{ route('admin.password') }}" class="{{ request()->routeIs('admin.password') ? 'active' : '' }}">تغيير كلمة المرور</a>
+            <a href="{{ route('admin.logout') }}" style="background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.5); color: #fecdd3;">تسجيل خروج</a>
         </nav>
     </header>
     <main>

@@ -378,6 +378,7 @@
             </div>
             <div class="copyright">
                 <p>جميع الحقوق محفوظة &copy; 2023 مكتب فزعة للخدمات الحكومية</p>
+                <p>تطوير وتنفيذ <a href="https://wa.me/201097155272" style="color:#fff">نظام سوفت</a></p>
             </div>
         </div>
     </footer>
@@ -389,7 +390,7 @@
     </div>
 
     <!-- Floating WhatsApp -->
-    <
+    <a
         href="{{ $whatsappLink }}"
         class="whatsapp-float"
         id="whatsappFloat"
@@ -399,7 +400,7 @@
         title="واتساب"
     >
         <i class="fa-brands fa-whatsapp"></i>
-    </>
+    </a>
 
     <style>
         .whatsapp-float {
