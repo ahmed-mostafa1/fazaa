@@ -229,61 +229,122 @@
                                 </ul>
                                 <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
                             </div>
+
+
+                            <!-- Modad -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/modad.png') }}" class="service-icon" alt="modad">
+                                </div>
+                                <ul class="service-list">
+                                    <li>توثيق عقود الموظفين</li>
+                                    <li>متابعة حالة حماية الأجور</li>
+                                    <li>تسجيل المنشأة في النظام</li>
+                                    <li>رفع ملف الرواتب الشهري</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+
+                            <!-- Baladi -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/baladi.png') }}" class="service-icon" alt="baladi">
+                                </div>
+                                <ul class="service-list">
+                                    <li>إصدار / إلغاء  رخصة بلدية</li>
+                                    <li>استخراج تصاريح :(لوحات – فعاليات – عربات)</li>
+                                    <li>إعتراض على مخالفة الرقابة</li>
+                                    <li>إستخراج الشهادة الصحية للعمالة </li>
+                                    <li>إصدار تصريح محل 24 ساعة </li>
+                                    <li>عقود الصيانة للسلامة </li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+
+
+                            <!-- ejar -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/ejar.png') }}" class="service-icon" alt="ejar">
+                                </div>
+                                <ul class="service-list">
+                                    <li>توثيق عقد إيجار تجاري</li>
+                                    <li>توثيق عقد إيجار سكني</li>
+                                    <li>تجديد / إنهاء العقود</li>
+                                    <li>إستخراج رخصة مسوق عقار ي</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+
+
+
+                            <!-- gosi -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/gosi.png') }}" class="service-icon" alt="gosi">
+                                </div>
+                                <ul class="service-list">
+                                    <li>تسجيل موظف جديد</li>
+                                    <li>استخراج شهادة اشتراك</li>
+                                    <li>فتح ملف منشأة</li>
+                                    <li>تعديل راتب أو بيانات</li>
+                                    <li>متابعة الالتزام</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+
+                            <!-- sbl -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/sbl.png') }}" class="service-icon" alt="sbl">
+                                </div>
+                                <ul class="service-list">
+                                    <li>تسجيل عنوان وطني للمنشأة</li>
+                                    <li>تحديث العنوان</li>
+                                    <li>إصدار إثبات عنوان</li>
+                                    <li>ربط العنوان بالجهات الحكومية</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+                            <!-- electricity -->
+                            <div class="service-card fade-in delay-300">
+                                <div class="service-icon">
+                                    <img src="{{ asset('assets/img/electricity.png') }}" class="service-icon" alt="electricity">
+                                </div>
+                                <ul class="service-list">
+                                    <li>طلب عداد كهربائي</li>
+                                    <li>طلب إزالة عداد</li>
+                                    <li>نقل ملكية عداد</li>
+                                    <li>سداد الفواتير</li>
+                                    <li>متابعة الالتزام</li>
+                                    <li>طلب عداد إضافي</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                            </div>
+
+
+
+
                         </div>
                     </div>
                     <div class="tab-pane" id="tab2">
                         <div class="services-grid">
                             <div class="service-card fade-in delay-100">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-file-contract"></i>
-                                </div>
-                                <h3>التراخيص التجارية</h3>
-                                <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            <div class="service-card fade-in delay-200">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-car-side"></i>
-                                </div>
-                                <h3>خدمات المرور</h3>
-                                <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-users-line"></i>
-                                </div>
-                                <h3>استقدام العمالة</h3>
-                                <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                                <h3>سيتم إضافة الخدمات المتاحة هنا قريبا</h3>
+                                <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="tab3">
                         <div class="services-grid">
                             <div class="service-card fade-in delay-100">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-file-contract"></i>
-                                </div>
-                                <h3>التراخيص التجارية</h3>
-                                <p>استخراج السجل التجاري، تجديد الرخص البلدية، وفروع الشركات عبر منصات البلديات.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            <div class="service-card fade-in delay-200">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-car-side"></i>
-                                </div>
-                                <h3>خدمات المرور</h3>
-                                <p>نقل الملكية، تجديد رخص القيادة، وفحص المركبات وتخليص المخالفات المرورية.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
-                            </div>
-                            <div class="service-card fade-in delay-300">
-                                <div class="service-icon">
-                                    <i class="fa-solid fa-users-line"></i>
-                                </div>
-                                <h3>استقدام العمالة</h3>
-                                <p>إجراءات استقدام العمالة المنزلية والمهنية عبر منصات مساند وقضية.</p>
-                                <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
+                                <h3>سيتم إضافة الخدمات المتاحة هنا قريبا</h3>
+                                <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
                             </div>
                         </div>
                     </div>
