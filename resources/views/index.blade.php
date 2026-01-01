@@ -28,8 +28,8 @@
                 </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#about-us" class="active">من نحن</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#steps">كيف نعمل</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#about">لماذا نحن</a></li>
                     <li><a href="#contact">تواصل معنا</a></li>
                 </ul>
@@ -393,7 +393,7 @@
                         </div>
                     </div>
 
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">تواصل معنا الآن</a>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; text-align:center;">تواصل معنا الآن</a>
                 </div>
                 <div class="about-img fade-in delay-200">
                     <img src="https://picsum.photos/seed/officeKsa/600/500" alt="Modern Office">
@@ -418,7 +418,7 @@
                         <i class="fa-solid fa-phone-volume"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">رقم الجوال</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">+966 50 123 4567</p>
+                            <p style="opacity: 0.9; font-size: 0.9rem;">+966534018865</p>
                         </div>
                     </div>
 
@@ -426,7 +426,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">واتساب</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">+966 50 123 4567</p>
+                            <p style="opacity: 0.9; font-size: 0.9rem;">+966534018865</p>
                         </div>
                     </div>
 
@@ -448,28 +448,26 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label style="font-weight: 600;">الاسم الكامل</label>
-                            <input type="text" class="form-control" placeholder="أدخل اسمك" required>
+                            <input type="text" name="fullName" id="fullName" class="form-control" placeholder="أدخل اسمك" required>
                         </div>
                         <div class="form-group">
                             <label style="font-weight: 600;">رقم الجوال</label>
-                            <input type="tel" class="form-control" placeholder="05xxxxxxxx" required>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="05xxxxxxxx" required>
                         </div>
                         <div class="form-group">
                             <label style="font-weight: 600;">نوع الخدمة</label>
-                            <select class="form-control">
-                                <option>اختر نوع الخدمة...</option>
-                                <option>جواز سفر / إقامة</option>
-                                <option>تصديقات</option>
-                                <option>سجل تجاري / بلدية</option>
-                                <option>مرور / مخالفات</option>
-                                <option>خدمة أخرى</option>
+                            <select name="serviceType" id="serviceType" class="form-control" required>
+                                <option value="" selected disabled>اختر نوع الخدمة...</option>
+                                <option>خدمات التجار</option>
+                                <option>خدمات المتاجر اﻹلكترونية</option>
+                                <option>خدمات اﻷفراد</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label style="font-weight: 600;">تفاصيل الطلب</label>
-                            <textarea class="form-control" rows="4" placeholder="اشرح لنا طلبك باختصار..."></textarea>
+                            <textarea name="details" id="details" class="form-control" rows="4" placeholder="اشرح لنا طلبك باختصار..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الطلب</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-family:Cairo, Sans;">إرسال الطلب</button>
                     </form>
                 </div>
             </div>

@@ -74,18 +74,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.disabled = true;
                 btn.style.opacity = '0.7';
 
+                const fullName = contactForm.elements.fullName.value.trim();
+                const phone = contactForm.elements.phone.value.trim();
+                const serviceType = contactForm.elements.serviceType.value.trim();
+                const details = contactForm.elements.details.value.trim();
+
+                const message = [
+                    `الاسم الكامل: ${fullName}`,
+                    `رقم الجوال: ${phone}`,
+                    `نوع الخدمة: ${serviceType}`,
+                    `تفاصيل الطلب: ${details}`
+                ].join('\n');
+
+                const whatsappUrl = `https://wa.me/966534018865?text=${encodeURIComponent(message)}`;
+
+                // Try opening in a new tab; fallback to current tab if blocked
+                const opened = window.open(whatsappUrl, '_blank');
+                if (!opened) {
+                    window.location.href = whatsappUrl;
+                }
+
+                contactForm.reset();
+                btn.innerText = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+
+                // Show Toast
+                toast.classList.add('show');
+
                 setTimeout(() => {
-                    contactForm.reset();
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-
-                    // Show Toast
-                    toast.classList.add('show');
-
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 4000);
-                }, 1500);
+                    toast.classList.remove('show');
+                }, 4000);
             });
         });
