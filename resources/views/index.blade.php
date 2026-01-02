@@ -26,6 +26,10 @@
     $stepsData = Setting::getValue('steps', HomepageDefaults::steps());
     $services = Setting::getValue('services', HomepageDefaults::services());
     $contact = Setting::getValue('contact', HomepageDefaults::contact());
+    $showPhone = $contact['show_phone'] ?? true;
+    $showWhatsapp = $contact['show_whatsapp'] ?? true;
+    $showAddress = $contact['show_address'] ?? true;
+    $showHours = $contact['show_hours'] ?? true;
     $whatsNumber = preg_replace('/\D+/', '', $contact['whatsapp_display'] ?? '966534018865');
     $whatsappLink = $whatsNumber ? "https://wa.me/{$whatsNumber}" : 'https://wa.me/966534018865';
 @endphp
@@ -269,6 +273,7 @@
                 <div class="contact-info">
                     <h3 style="color: var(--white); margin-bottom: 30px;">╪¿┘è╪º┘å╪º╪¬ ╪º┘ä╪¬┘ê╪º╪╡┘ä</h3>
                     
+                    @if ($showPhone)
                     <div class="info-item">
                         <i class="fa-solid fa-phone-volume"></i>
                         <div>
@@ -276,7 +281,9 @@
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['phone_display'] ?? '' }}</p>
                         </div>
                     </div>
+                    @endif
 
+                    @if ($showWhatsapp)
                     <div class="info-item">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
@@ -284,7 +291,9 @@
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['whatsapp_display'] ?? '' }}</p>
                         </div>
                     </div>
+                    @endif
 
+                    @if ($showAddress)
                     <div class="info-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
@@ -292,11 +301,14 @@
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['address'] ?? '' }}</p>
                         </div>
                     </div>
+                    @endif
 
+                    @if ($showHours)
                     <div style="margin-top: 50px;">
                         <p style="opacity: 0.8; font-size: 0.9rem;">╪│╪º╪╣╪º╪¬ ╪º┘ä╪╣┘à┘ä:</p>
                         <p style="color: var(--white); font-weight: bold;">{{ $contact['hours'] ?? '' }}</p>
                     </div>
+                    @endif
                 </div>
 
                 <div class="contact-form-box">
@@ -509,3 +521,4 @@
 
 </body>
 </html>
+

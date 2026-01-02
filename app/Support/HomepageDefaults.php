@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace App\Support;
 
@@ -191,6 +191,10 @@ class HomepageDefaults
     public static function contact(): array
     {
         return [
+            'show_phone' => true,
+            'show_whatsapp' => true,
+            'show_address' => true,
+            'show_hours' => true,
             'phone_display' => '+966 50 123 4567',
             'whatsapp_display' => '+966 50 123 4567',
             'address' => '╪º┘ä╪▒┘è╪º╪╢╪î ╪¡┘è ╪º┘ä╪╣┘ä┘è╪º╪î ╪┤╪º╪▒╪╣ ╪º┘ä╪¬╪¡┘ä┘è╪⌐',

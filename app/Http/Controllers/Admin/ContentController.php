@@ -182,6 +182,10 @@ class ContentController extends Controller
     public function updateContact(Request $request)
     {
         $data = $request->validate([
+            'show_phone' => 'nullable|boolean',
+            'show_whatsapp' => 'nullable|boolean',
+            'show_address' => 'nullable|boolean',
+            'show_hours' => 'nullable|boolean',
             'phone_display' => 'nullable|string|max:255',
             'whatsapp_display' => 'nullable|string|max:255',
             'address' => 'nullable|string|max:255',
@@ -194,6 +198,10 @@ class ContentController extends Controller
         $socials = array_map(fn ($url) => ['label' => $url, 'url' => $url], $socials);
 
         Setting::setValue('contact', [
+            'show_phone' => $request->boolean('show_phone'),
+            'show_whatsapp' => $request->boolean('show_whatsapp'),
+            'show_address' => $request->boolean('show_address'),
+            'show_hours' => $request->boolean('show_hours'),
             'phone_display' => $data['phone_display'] ?? '',
             'whatsapp_display' => $data['whatsapp_display'] ?? '',
             'address' => $data['address'] ?? '',
