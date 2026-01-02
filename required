@@ -4,17 +4,19 @@
 ; خدمات ايجار 
 ; توثيق عقد ايجار سكني
 
-اضافة كارد ايجار في تاب اﻷفراد ويحتوي تجديد ظ انهاء العقود + توثيق عقد ايجار سكني
+; اضافة كارد ايجار في تاب اﻷفراد ويحتوي تجديد ظ انهاء العقود + توثيق عقد ايجار سكني
 
-في اضافة الخدمات ( الصورة يتم اضافتها من file upload )
+; في اضافة الخدمات ( الصورة يتم اضافتها من file upload )
 
 لماذا تختار خدماتنا 
 التحكم في اضافة الكروت 
 
 تواصل معنا 
 حذف العنوان
+ in /admin/contact make it available to hide any item of contact-info items 
 
 الفوتر
 التحكم في وساءل التواصل الاجتماعي (حذف واضافة )
 التحكم في محتوى الفوتر
 
+add footer page in admin/dashboard to control footer content and make it available to crud social-links with icons and links

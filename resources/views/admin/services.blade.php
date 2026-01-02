@@ -4,7 +4,7 @@
     <div class="card">
         <h2>قسم الخدمات</h2>
         <p class="muted">أضف بطاقات جديدة لكل تبويب. يمكنك تعديل العنوان، وصف قصير، الأيقونة، وقائمة النقاط داخل كل بطاقة.</p>
-        <form action="{{ route('admin.services.update') }}" method="POST" id="servicesBoard" class="stack">
+        <form action="{{ route('admin.services.update') }}" method="POST" enctype="multipart/form-data" id="servicesBoard" class="stack">
             @csrf
             @foreach ($services['tabs'] ?? [] as $tab)
                 @php $cards = $tab['cards'] ?? []; @endphp
@@ -29,7 +29,11 @@
                                 <label>وصف مختصر</label>
                                 <textarea name="tabs[{{ $tab['id'] }}][cards][{{ $index }}][description]" placeholder="نص قصير يشرح الخدمة">{{ old('tabs.' . $tab['id'] . '.cards.' . $index . '.description', $card['description'] ?? '') }}</textarea>
                                 <label>رابط الأيقونة (اختياري)</label>
-                                <input type="text" name="tabs[{{ $tab['id'] }}][cards][{{ $index }}][icon]" value="{{ old('tabs.' . $tab['id'] . '.cards.' . $index . '.icon', $card['icon'] ?? '') }}" placeholder="مثال: assets/img/commerce.png">
+                                <input type="file" name="tabs[{{ $tab['id'] }}][cards][{{ $index }}][icon]" accept="image/*">
+                                <input type="hidden" name="tabs[{{ $tab['id'] }}][cards][{{ $index }}][icon_existing]" value="{{ old('tabs.' . $tab['id'] . '.cards.' . $index . '.icon_existing', $card['icon'] ?? '') }}">
+                                @if (!empty($card['icon']))
+                                    <small class="muted">Current: {{ $card['icon'] }}</small>
+                                @endif
                                 <label>قائمة النقاط (سطر لكل نقطة)</label>
                                 <textarea name="tabs[{{ $tab['id'] }}][cards][{{ $index }}][items]" placeholder="أدخل عناصر القائمة هنا">{{ old('tabs.' . $tab['id'] . '.cards.' . $index . '.items', implode("\n", $card['items'] ?? [])) }}</textarea>
                                 <div class="actions">
@@ -45,7 +49,7 @@
                                 <label>وصف مختصر</label>
                                 <textarea name="tabs[{{ $tab['id'] }}][cards][0][description]" placeholder="نص قصير يشرح الخدمة"></textarea>
                                 <label>رابط الأيقونة (اختياري)</label>
-                                <input type="text" name="tabs[{{ $tab['id'] }}][cards][0][icon]" placeholder="مثال: assets/img/commerce.png">
+                                <input type="file" name="tabs[{{ $tab['id'] }}][cards][0][icon]" accept="image/*">
                                 <label>قائمة النقاط (سطر لكل نقطة)</label>
                                 <textarea name="tabs[{{ $tab['id'] }}][cards][0][items]" placeholder="أدخل عناصر القائمة هنا"></textarea>
                                 <div class="actions">
@@ -77,7 +81,7 @@
                         <label>وصف مختصر</label>
                         <textarea name="tabs[${tabId}][cards][${index}][description]" placeholder="نص قصير يشرح الخدمة"></textarea>
                         <label>رابط الأيقونة (اختياري)</label>
-                        <input type="text" name="tabs[${tabId}][cards][${index}][icon]" placeholder="مثال: assets/img/commerce.png">
+                        <input type="file" name="tabs[${tabId}][cards][${index}][icon]" accept="image/*">
                         <label>قائمة النقاط (سطر لكل نقطة)</label>
                         <textarea name="tabs[${tabId}][cards][${index}][items]" placeholder="أدخل عناصر القائمة هنا"></textarea>
                         <div class="actions">

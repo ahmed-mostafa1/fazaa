@@ -53,9 +53,24 @@ class ContentController extends Controller
             'mission_text' => 'nullable|string',
             'values_title' => 'nullable|string|max:255',
             'values_list' => 'nullable|string',
+            'features' => 'nullable|array',
+            'features.*.icon' => 'nullable|string|max:255',
+            'features.*.title' => 'nullable|string|max:255',
+            'features.*.text' => 'nullable|string',
         ]);
 
         $values = array_filter(array_map('trim', explode("\n", $data['values_list'] ?? '')));
+        $features = collect($data['features'] ?? [])
+            ->map(function ($feature) {
+                return [
+                    'icon' => isset($feature['icon']) ? trim($feature['icon']) : '',
+                    'title' => isset($feature['title']) ? trim($feature['title']) : '',
+                    'text' => isset($feature['text']) ? trim($feature['text']) : '',
+                ];
+            })
+            ->filter(fn ($feature) => $feature['icon'] !== '' || $feature['title'] !== '' || $feature['text'] !== '')
+            ->values()
+            ->all();
 
         Setting::setValue('about', [
             'intro' => $data['intro'] ?? '',
@@ -65,6 +80,7 @@ class ContentController extends Controller
             'mission_text' => $data['mission_text'] ?? '',
             'values_title' => $data['values_title'] ?? '',
             'values_list' => $values,
+            'features' => $features,
         ]);
 
         return back()->with('status', 'تم حفظ قسم من نحن بنجاح.');
@@ -121,7 +137,7 @@ class ContentController extends Controller
         foreach ($tabs as $tabId => $tabData) {
             $cards = [];
             if (!empty($tabData['cards']) && is_array($tabData['cards'])) {
-                foreach ($tabData['cards'] as $card) {
+                foreach ($tabData['cards'] as $cardIndex => $card) {
                     $items = [];
                     if (isset($card['items']) && is_string($card['items'])) {
                         $items = array_filter(array_map('trim', explode("\n", $card['items'])));
@@ -129,10 +145,17 @@ class ContentController extends Controller
                         $items = array_filter(array_map('trim', $card['items']));
                     }
 
+                    $iconPath = $card['icon_existing'] ?? $card['icon'] ?? null;
+                    $iconFile = $request->file("tabs.$tabId.cards.$cardIndex.icon");
+                    if ($iconFile && $iconFile->isValid()) {
+                        $path = $iconFile->store('services', 'public');
+                        $iconPath = $path ? ('storage/' . $path) : $iconPath;
+                    }
+
                     $cards[] = [
                         'title' => $card['title'] ?? '',
                         'description' => $card['description'] ?? null,
-                        'icon' => $card['icon'] ?? null,
+                        'icon' => $iconPath ?: null,
                         'items' => $items,
                     ];
                 }
