@@ -212,4 +212,28 @@ class ContentController extends Controller
 
         return back()->with('status', 'تم حفظ قسم التواصل بنجاح.');
     }
+    public function newsTicker()
+    {
+        $newsTicker = Setting::getValue('news_ticker', HomepageDefaults::newsTicker());
+        return view('admin.news_ticker', compact('newsTicker'));
+    }
+
+    public function updateNewsTicker(Request $request)
+    {
+        $data = $request->validate([
+            'enabled' => 'nullable|boolean',
+            'content' => 'required|string',
+            'bg_color' => 'required|string|max:20',
+            'text_color' => 'required|string|max:20',
+        ]);
+
+        Setting::setValue('news_ticker', [
+            'enabled' => $request->boolean('enabled'),
+            'content' => $data['content'],
+            'bg_color' => $data['bg_color'],
+            'text_color' => $data['text_color'],
+        ]);
+
+        return back()->with('status', 'تم حفظ إعدادات شريط الأخبار بنجاح.');
+    }
 }

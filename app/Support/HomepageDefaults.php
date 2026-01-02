@@ -207,4 +207,14 @@ class HomepageDefaults
             ],
         ];
     }
+
+    public static function newsTicker(): array
+    {
+        return [
+            'enabled' => false,
+            'content' => 'أهلاً بكم في مكتب فزعة للخدمات الحكومية.. نسعد بخدمتكم على مدار الساعة',
+            'bg_color' => '#fef9c3', // Light yellow/orange tint
+            'text_color' => '#854d0e', // Dark orange/brown
+        ];
+    }
 }

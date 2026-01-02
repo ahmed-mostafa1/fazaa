@@ -49,6 +49,7 @@
         <nav>
             <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">الرئيسية</a>
             <a href="{{ route('admin.hero') }}" class="{{ request()->routeIs('admin.hero') ? 'active' : '' }}">قسم البداية</a>
+            <a href="{{ route('admin.newsTicker') }}" class="{{ request()->routeIs('admin.newsTicker') ? 'active' : '' }}">شريط الأخبار</a>
             <a href="{{ route('admin.about') }}" class="{{ request()->routeIs('admin.about') ? 'active' : '' }}">قسم من نحن</a>
             <a href="{{ route('admin.features.index') }}" class="{{ request()->routeIs('admin.features.*') ? 'active' : '' }}">الميزات</a>
             <a href="{{ route('admin.steps') }}" class="{{ request()->routeIs('admin.steps') ? 'active' : '' }}">قسم كيف نعمل</a>

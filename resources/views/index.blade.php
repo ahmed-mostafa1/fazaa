@@ -32,6 +32,8 @@
     $showHours = $contact['show_hours'] ?? true;
     $whatsNumber = preg_replace('/\D+/', '', $contact['whatsapp_display'] ?? '966534018865');
     $whatsappLink = $whatsNumber ? "https://wa.me/{$whatsNumber}" : 'https://wa.me/966534018865';
+
+    $newsTicker = Setting::getValue('news_ticker', HomepageDefaults::newsTicker());
 @endphp
 
     <!-- Header -->
@@ -53,7 +55,58 @@
                 </div>
             </nav>
         </div>
+
+        @if($newsTicker['enabled'] ?? false)
+        <!-- News Ticker -->
+        <div class="news-ticker-container" style="background-color: {{ $newsTicker['bg_color'] }}; color: {{ $newsTicker['text_color'] }};">
+            <div class="news-ticker-wrapper">
+                <div class="news-ticker-content">
+                    {{ $newsTicker['content'] }} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; {{ $newsTicker['content'] }} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; {{ $newsTicker['content'] }}
+                </div>
+            </div>
+        </div>
+        @endif
     </header>
+
+    @if($newsTicker['enabled'] ?? false)
+    <style>
+        .news-ticker-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+            background: rgba(255,255,255,0.95); /* Fallback */
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        /* Adjust hero padding since we have a ticker now part of fixed header */
+        /* Header is roughly 80px. Ticker is ~45px. Total ~125px. */
+        body.has-ticker #hero {
+            padding-top: 140px; 
+        }
+        
+        .news-ticker-wrapper {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .news-ticker-content {
+            display: inline-block;
+            padding-left: 0;
+            animation: ticker 25s linear infinite;
+            min-width: 100%;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        @keyframes ticker {
+            0%   { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+    <script>
+        document.body.classList.add('has-ticker');
+    </script>
+    @endif
 
     <!-- Hero Section -->
     <section id="hero">

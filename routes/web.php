@@ -40,6 +40,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/contact', [ContentController::class, 'contact'])->name('contact');
         Route::post('/contact', [ContentController::class, 'updateContact'])->name('contact.update');
 
+        Route::get('/news-ticker', [ContentController::class, 'newsTicker'])->name('newsTicker');
+        Route::post('/news-ticker', [ContentController::class, 'updateNewsTicker'])->name('newsTicker.update');
+
         Route::get('/password', [\App\Http\Controllers\Admin\AuthController::class, 'showPassword'])->name('password');
         Route::post('/password', [\App\Http\Controllers\Admin\AuthController::class, 'updatePassword'])->name('password.update');
 
