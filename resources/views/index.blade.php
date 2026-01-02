@@ -189,7 +189,7 @@
                         <div class="tab-pane {{ $index === 0 ? 'active' : '' }}" id="{{ $tab['id'] }}">
                             <div class="services-grid">
                                 @forelse ($tab['cards'] ?? [] as $cardIndex => $card)
-                                    <div class="service-card fade-in delay-{{ 100 + ($cardIndex * 50) }}">
+                                    <div class="service-card fade-in delay-{{ 100 + ($cardIndex * 50) }} {{ $cardIndex >= 3 ? 'hidden-service-card' : '' }}" style="{{ $cardIndex >= 3 ? 'display: none;' : '' }}">
                                         @if (!empty($card['icon']))
                                             <div class="service-icon">
                                                 <img src="{{ asset($card['icon']) }}" class="service-icon" alt="{{ $card['title'] ?? 'service' }}">
@@ -217,6 +217,11 @@
                                     </div>
                                 @endforelse
                             </div>
+                            @if(count($tab['cards'] ?? []) > 3)
+                                <div style="text-align: center; margin-top: 30px; font-family: 'Cairo', sans-serif;">
+                                    <button class="btn btn-primary show-more-btn" data-target="{{ $tab['id'] }}" style="font-family: 'Cairo', sans-serif;">إظهار المزيد</button>
+                                </div>
+                            @endif
                         </div>
                     @endforeach
                 </div>
@@ -504,6 +509,21 @@
                     button.classList.add('active');
                     const tabId = button.getAttribute('data-tab');
                     document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Show More functionality
+            document.querySelectorAll('.show-more-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabPane = this.closest('.tab-pane');
+                    const hiddenCards = tabPane.querySelectorAll('.hidden-service-card');
+                    
+                    hiddenCards.forEach(card => {
+                        card.style.display = 'flex'; // Or 'block' depending on your layout, but flex is safer for full height
+                        // Optional: Trigger a reflow for animation if needed, but simple display switch is fine
+                    });
+
+                    this.style.display = 'none'; // Hide the button after showing all
                 });
             });
         });
