@@ -35,7 +35,6 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <i class="fa-solid fa-file-shield"></i>
                     فزعة <span>للخدمات</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
@@ -158,7 +157,7 @@
                 @endforeach
             </div>
             <div class="notes">
-                <div class="note fade-in delay-100" style="color: yellow; text-align: center; margin-top: 20px;">
+                <div class="note fade-in delay-100" style="color: yellow; font-size: 20px; text-align: center; margin-top: 60px;">
                     <span style="color:yellow">{{ $stepsData['note_title'] ?? '' }}</span>
                     <p>{{ $stepsData['note_text'] ?? '' }}</p>
                 </div>
@@ -348,7 +347,7 @@
             <div class="footer-grid">
                 <div>
                     <a href="#" class="footer-logo">
-                        <i class="fa-solid fa-file-shield"></i> فزعة
+                        فزعة <span>للخدمات</span>
                     </a>
                     <p>خدمات حكومية متخصصة نهدف لتبسيط الإجراءات وتوفير الوقت والمجهود على عملائنا الكرام.</p>
                 </div>
