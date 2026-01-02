@@ -79,13 +79,13 @@
                             <i class="fa-solid fa-wifi" style="opacity: 0.7;"></i>
                         </div>
                         <div class="doc-placeholder">
-                            <img src="{{ asset('img/id-card.png') }}" alt="Document Preview">
-                            <div style="position: absolute; bottom: 10px; right: 15px; background: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="{{ asset('assets/img/hero.png')}}" alt="Document Preview">
+                            <div style="position: absolute; bottom: 10px; right: 15px; background: #085813ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                                 طلب رقم: #99201
                             </div>
                         </div>
                         <div style="text-align: right; margin-bottom: 10px;">
-                            <h4 style="margin:0; font-size: 1.1rem;">تجديد الهوية الوطنية</h4>
+                            <h4 style="margin:0; font-size: 1.1rem; color: var(--accent-color);">تجديد الهوية الوطنية</h4>
                             <p style="font-size: 0.8rem; opacity: 0.8; margin:0;">وزارة الداخلية - أبشر</p>
                         </div>
                         <div class="status-line"></div>
@@ -343,7 +343,7 @@
                     <a href="#" class="footer-logo">
                         فزعة <span>للخدمات</span>
                     </a>
-                    <p>خدمات حكومية متخصصة نهدف لتبسيط الإجراءات وتوفير الوقت والمجهود على عملائنا الكرام.</p>
+                    <p>{{ $footerSettings['description'] ?? '' }}</p>
                 </div>
                 <div>
                     <h4 style="color: var(--white); margin-bottom: 20px;">روابط سريعة</h4>
@@ -357,21 +357,17 @@
                 <div>
                     <h4 style="color: var(--white); margin-bottom: 20px;">تابعنا</h4>
                     <div class="social-links" style="display: flex; gap: 15px;">
-                        <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: var(--white);">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: var(--white);">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: var(--white);">
-                            <i class="fa-brands fa-snapchat"></i>
-                        </a>
+                        @foreach ($socialLinks as $link)
+                            <a href="{{ $link->url }}" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: var(--white);">
+                                <i class="{{ $link->icon }}"></i>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2023 مكتب فزعة للخدمات الحكومية</p>
-                <p>تطوير وتنفيذ <a href="https://wa.me/201097155272" style="color:#fff">نظام سوفت</a></p>
+                <p>{!! $footerSettings['copyright_text'] ?? 'جميع الحقوق محفوظة' !!}</p>
+                <p>{{ $footerSettings['developer_text'] ?? 'تطوير وتنفيذ' }} <a href="{{ $footerSettings['developer_link'] ?? '#' }}" style="color:#fff">نظام سوفت</a></p>
             </div>
         </div>
     </footer>

@@ -5,7 +5,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $features = \App\Models\Feature::all();
-    return view('index', compact('features'));
+    
+    $footerSettings = \App\Models\Setting::getValue('footer', [
+        'description' => 'خدمات حكومية متخصصة نهدف لتبسيط الإجراءات وتوفير الوقت والمجهود على عملائنا الكرام.',
+        'copyright_text' => 'جميع الحقوق محفوظة &copy; 2023 مكتب فزعة للخدمات الحكومية',
+        'developer_text' => 'تطوير وتنفيذ نظام سوفت',
+        'developer_link' => 'https://wa.me/201097155272',
+    ]);
+    
+    $socialLinks = \App\Models\SocialLink::all();
+
+    return view('index', compact('features', 'footerSettings', 'socialLinks'));
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -37,5 +47,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Feature CRUD
         Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
+
+        // Footer Management
+        Route::get('/footer', [\App\Http\Controllers\Admin\FooterController::class, 'index'])->name('footer.index');
+        Route::post('/footer/settings', [\App\Http\Controllers\Admin\FooterController::class, 'updateSettings'])->name('footer.updateSettings');
+        Route::post('/footer/social', [\App\Http\Controllers\Admin\FooterController::class, 'storeSocial'])->name('footer.storeSocial');
+        Route::delete('/footer/social/{socialLink}', [\App\Http\Controllers\Admin\FooterController::class, 'destroySocial'])->name('footer.destroySocial');
     });
 });
