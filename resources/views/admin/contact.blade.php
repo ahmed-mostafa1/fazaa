@@ -22,16 +22,16 @@
             </div>
             <div class="grid">
                 <div>
-                    <label><input type="checkbox" name="show_phone" value="1" @checked(old('show_phone', $contact['show_phone'] ?? true))> Show phone</label>
+                    <label><input type="checkbox" name="show_phone" value="1" @checked(old('show_phone', $contact['show_phone'] ?? true))> إظهار رقم الهاتف</label>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="show_whatsapp" value="1" @checked(old('show_whatsapp', $contact['show_whatsapp'] ?? true))> Show WhatsApp</label>
+                    <label><input type="checkbox" name="show_whatsapp" value="1" @checked(old('show_whatsapp', $contact['show_whatsapp'] ?? true))> إظهار رقم واتساب</label>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="show_address" value="1" @checked(old('show_address', $contact['show_address'] ?? true))> Show address</label>
+                    <label><input type="checkbox" name="show_address" value="1" @checked(old('show_address', $contact['show_address'] ?? true))> إظهار العنوان</label>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="show_hours" value="1" @checked(old('show_hours', $contact['show_hours'] ?? true))> Show hours</label>
+                    <label><input type="checkbox" name="show_hours" value="1" @checked(old('show_hours', $contact['show_hours'] ?? true))> إظهار ساعات العمل</label>
                 </div>
             </div>
             <div class="grid">
@@ -44,10 +44,7 @@
                     <input type="text" name="toast" value="{{ old('toast', $contact['toast'] ?? '') }}" placeholder="تم استلام طلبك بنجاح! سنتواصل معك قريباً.">
                 </div>
             </div>
-            <div>
-                <label>القنوات الاجتماعية</label>
-                <textarea name="socials" placeholder="ضع كل رابط في سطر منفصل (تويتر، انستغرام، سناب، ...).">{{ old('socials', collect($contact['socials'] ?? [])->pluck('url')->implode("\n")) }}</textarea>
-            </div>
+           
             <div class="actions">
                 <button class="btn btn-secondary" type="reset">تفريغ الحقول</button>
                 <button class="btn btn-primary" type="submit">حفظ</button>

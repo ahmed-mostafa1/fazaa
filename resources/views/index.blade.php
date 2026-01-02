@@ -234,20 +234,14 @@
                         <h2>لماذا تختار خدماتنا؟</h2>
                     </div>
                     
-                    @foreach ($about['features'] ?? [] as $feature)
+                    @foreach ($features as $feature)
                         <div class="feature-box">
-                            @if (!empty($feature['icon']))
-                                <div class="feature-icon">
-                                    <i class="{{ $feature['icon'] }}"></i>
-                                </div>
-                            @endif
+                            <div class="feature-icon">
+                                <i class="{{ $feature->icon }}"></i>
+                            </div>
                             <div class="feature-text">
-                                @if (!empty($feature['title']))
-                                    <h4>{{ $feature['title'] }}</h4>
-                                @endif
-                                @if (!empty($feature['text']))
-                                    <p>{{ $feature['text'] }}</p>
-                                @endif
+                                <h4>{{ $feature->title }}</h4>
+                                <p>{{ $feature->text }}</p>
                             </div>
                         </div>
                     @endforeach

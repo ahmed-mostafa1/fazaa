@@ -33,44 +33,10 @@
 المهنية والاحترافية">{{ old('values_list', implode("\n", $about['values_list'] ?? [])) }}</textarea>
                 </div>
             </div>
-                        <div class="card" style="background: rgba(255,255,255,0.02); border-color: var(--border);">
-                <h3 style="margin-top:0;">About section features</h3>
-                <p class="muted">Add a Font Awesome class with title and text for each feature.</p>
-                @php $features = old('features', $about['features'] ?? []); @endphp
-                <div class="stack" id="featuresList">
-                    @foreach ($features as $index => $feature)
-                        <div class="feature-form" data-feature>
-                            <label>Icon class</label>
-                            <input type="text" name="features[{{ $index }}][icon]" value="{{ $feature['icon'] ?? '' }}" placeholder="fa-solid fa-bolt">
-                            <label>Title</label>
-                            <input type="text" name="features[{{ $index }}][title]" value="{{ $feature['title'] ?? '' }}" placeholder="Feature title">
-                            <label>Text</label>
-                            <textarea name="features[{{ $index }}][text]" placeholder="Short text">{{ $feature['text'] ?? '' }}</textarea>
-                            <div class="actions">
-                                <button class="btn btn-secondary" type="button" data-remove-feature>Remove feature</button>
-                            </div>
-                            <hr class="divider">
-                        </div>
-                    @endforeach
-
-                    @if (empty($features))
-                        <div class="feature-form" data-feature>
-                            <label>Icon class</label>
-                            <input type="text" name="features[0][icon]" placeholder="fa-solid fa-bolt">
-                            <label>Title</label>
-                            <input type="text" name="features[0][title]" placeholder="Feature title">
-                            <label>Text</label>
-                            <textarea name="features[0][text]" placeholder="Short text"></textarea>
-                            <div class="actions">
-                                <button class="btn btn-secondary" type="button" data-remove-feature>Remove feature</button>
-                            </div>
-                            <hr class="divider">
-                        </div>
-                    @endif
-                </div>
-                <div class="actions">
-                    <button class="btn btn-primary" type="button" id="addFeature">Add feature</button>
-                </div>
+            <div class="card" style="background: rgba(255,255,255,0.02); border-color: var(--border);">
+                <h3 style="margin-top:0;">ميزاتنا (Features)</h3>
+                <p class="muted">تم نقل إدارة الميزات إلى صفحة منفصلة.</p>
+                <a href="{{ route('admin.features.index') }}" class="btn btn-secondary">إدارة الميزات</a>
             </div>
             <div class="actions">
                 <button class="btn btn-secondary" type="reset">تفريغ الحقول</button>

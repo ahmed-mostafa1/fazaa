@@ -4,7 +4,8 @@ use App\Http\Controllers\Admin\ContentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    $features = \App\Models\Feature::all();
+    return view('index', compact('features'));
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -33,5 +34,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/password', [\App\Http\Controllers\Admin\AuthController::class, 'updatePassword'])->name('password.update');
 
         Route::get('/logout', [\App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
+
+        // Feature CRUD
+        Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
     });
 });
