@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>┘à┘â╪¬╪¿ ┘ü╪▓╪╣╪⌐ ┘ä┘ä╪«╪»┘à╪º╪¬ ╪º┘ä╪¡┘â┘ê┘à┘è╪⌐</title>
+    <title>مكتب فزعة للخدمات الحكومية</title>
     
     <!-- Google Fonts: Cairo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,14 +39,14 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    ┘ü╪▓╪╣╪⌐ <span>┘ä┘ä╪«╪»┘à╪º╪¬</span>
+                    فزعة <span>للخدمات</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#about-us" class="active">┘à┘å ┘å╪¡┘å</a></li>
-                    <li><a href="#steps">┘â┘è┘ü ┘å╪╣┘à┘ä</a></li>
-                    <li><a href="#services">╪«╪»┘à╪º╪¬┘å╪º</a></li>
-                    <li><a href="#about">┘ä┘à╪º╪░╪º ┘å╪¡┘å</a></li>
-                    <li><a href="#contact">╪¬┘ê╪º╪╡┘ä ┘à╪╣┘å╪º</a></li>
+                    <li><a href="#about-us" class="active">من نحن</a></li>
+                    <li><a href="#steps">كيف نعمل</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#about">لماذا نحن</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
                 </ul>
                 <div class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fa-solid fa-bars"></i>
@@ -60,7 +60,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
-                    <h1>{{ $hero['title'] ?? '' }} <br> ╪¿┘Ç <span>{{ $hero['highlight'] ?? '' }}</span></h1>
+                    <h1>{{ $hero['title'] ?? '' }} <br> بـ <span>{{ $hero['highlight'] ?? '' }}</span></h1>
                     <p>{{ $hero['description'] ?? '' }}</p>
                     <div class="cta-group">
                         @if (!empty($hero['cta_primary_text']))
@@ -75,27 +75,27 @@
                     <!-- Modern Government Card Animation -->
                     <div class="glass-card">
                         <div class="card-header">
-                            <span style="font-weight: bold; color: var(--accent-color);">╪¡╪º┘ä╪⌐ ╪º┘ä╪╖┘ä╪¿</span>
+                            <span style="font-weight: bold; color: var(--accent-color);">حالة الطلب</span>
                             <i class="fa-solid fa-wifi" style="opacity: 0.7;"></i>
                         </div>
                         <div class="doc-placeholder">
                             <img src="{{ asset('img/id-card.png') }}" alt="Document Preview">
                             <div style="position: absolute; bottom: 10px; right: 15px; background: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                ╪╖┘ä╪¿ ╪▒┘é┘à: #99201
+                                طلب رقم: #99201
                             </div>
                         </div>
                         <div style="text-align: right; margin-bottom: 10px;">
-                            <h4 style="margin:0; font-size: 1.1rem;">╪¬╪¼╪»┘è╪» ╪º┘ä┘ç┘ê┘è╪⌐ ╪º┘ä┘ê╪╖┘å┘è╪⌐</h4>
-                            <p style="font-size: 0.8rem; opacity: 0.8; margin:0;">┘ê╪▓╪º╪▒╪⌐ ╪º┘ä╪»╪º╪«┘ä┘è╪⌐ - ╪ú╪¿╪┤╪▒</p>
+                            <h4 style="margin:0; font-size: 1.1rem;">تجديد الهوية الوطنية</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8; margin:0;">وزارة الداخلية - أبشر</p>
                         </div>
                         <div class="status-line"></div>
                         <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 10px;">
-                            <span>╪¼╪º╪▒┘è ╪º┘ä┘à╪╣╪º┘ä╪¼╪⌐...</span>
+                            <span>جاري المعالجة...</span>
                             <span style="color: var(--accent-color);">75%</span>
                         </div>
                         
                         <div class="stamp">
-                            ┘à╪╣╪¬┘à╪»
+                            معتمد
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
     <section id="about-us" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>┘à┘å ┘å╪¡┘å</h2>
+                <h2>من نحن</h2>
                 <p>{{ $about['intro'] ?? '' }}</p>
             </div>
 
@@ -174,8 +174,8 @@
     <section id="services" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>╪«╪»┘à╪º╪¬┘å╪º ╪º┘ä┘à┘à┘è╪▓╪⌐</h2>
-                <p>┘å╪║╪╖┘è ┘â╪º┘ü╪⌐ ╪º╪¡╪¬┘è╪º╪¼╪º╪¬┘â ┘à┘å ╪º┘ä╪«╪»┘à╪º╪¬ ╪º┘ä╪¡┘â┘ê┘à┘è╪⌐ ╪º┘ä╪Ñ┘ä┘â╪¬╪▒┘ê┘å┘è╪⌐ ┘ê╪º┘ä┘ê╪▒┘é┘è╪⌐</p>
+                <h2>خدماتنا المميزة</h2>
+                <p>نغطي كافة احتياجاتك من الخدمات الحكومية الإلكترونية والورقية</p>
             </div>
             
             <div class="tabs">
@@ -208,12 +208,12 @@
                                                 @endforeach
                                             </ul>
                                         @endif
-                                        <a href="#contact" class="btn btn-primary">╪º╪¿╪»╪ú ┘à╪╣╪º┘à┘ä╪¬┘â ╪º┘ä╪ó┘å</a>
+                                        <a href="#contact" class="btn btn-primary">ابدأ معاملتك الآن</a>
                                     </div>
                                 @empty
                                     <div class="service-card fade-in delay-100">
-                                        <h3>┘ä╪º ╪¬┘ê╪¼╪» ╪«╪»┘à╪º╪¬ ┘ä┘ç╪░╪º ╪º┘ä╪¬╪¿┘ê┘è╪¿ ╪¡╪º┘ä┘è╪º┘ï</h3>
-                                        <a href="#contact" class="btn btn-primary">┘ä┘ä╪Ñ╪│╪¬┘ü╪│╪º╪▒ ╪º╪╢╪║╪╖ ┘ç┘å╪º</a>
+                                        <h3>لا توجد خدمات لهذا التبويب حالياً</h3>
+                                        <a href="#contact" class="btn btn-primary">للإستفسار اضغط هنا</a>
                                     </div>
                                 @endforelse
                             </div>
@@ -231,7 +231,7 @@
             <div class="about-wrapper">
                 <div class="about-features fade-in">
                     <div class="section-header" style="text-align: right;">
-                        <h2>┘ä┘à╪º╪░╪º ╪¬╪«╪¬╪º╪▒ ╪«╪»┘à╪º╪¬┘å╪º╪ƒ</h2>
+                        <h2>لماذا تختار خدماتنا؟</h2>
                     </div>
                     
                     @foreach ($about['features'] ?? [] as $feature)
@@ -265,19 +265,19 @@
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>╪º╪¿╪»╪ú ┘à╪╣╪º┘à┘ä╪¬┘â</h2>
-                <p>╪º┘à┘ä╪ú ╪º┘ä┘å┘à┘ê╪░╪¼ ┘ê╪│┘å╪¬┘ê╪º╪╡┘ä ┘à╪╣┘â ┘ä╪Ñ┘å┘ç╪º╪í ╪Ñ╪¼╪▒╪º╪í╪º╪¬┘â</p>
+                <h2>ابدأ معاملتك</h2>
+                <p>املأ النموذج وسنتواصل معك لإنهاء إجراءاتك</p>
             </div>
 
             <div class="contact-wrapper fade-in delay-100">
                 <div class="contact-info">
-                    <h3 style="color: var(--white); margin-bottom: 30px;">╪¿┘è╪º┘å╪º╪¬ ╪º┘ä╪¬┘ê╪º╪╡┘ä</h3>
+                    <h3 style="color: var(--white); margin-bottom: 30px;">بيانات التواصل</h3>
                     
                     @if ($showPhone)
                     <div class="info-item">
                         <i class="fa-solid fa-phone-volume"></i>
                         <div>
-                            <h4 style="color: var(--white); margin:0;">╪▒┘é┘à ╪º┘ä╪¼┘ê╪º┘ä</h4>
+                            <h4 style="color: var(--white); margin:0;">رقم الجوال</h4>
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['phone_display'] ?? '' }}</p>
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                     <div class="info-item">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
-                            <h4 style="color: var(--white); margin:0;">┘ê╪º╪¬╪│╪º╪¿</h4>
+                            <h4 style="color: var(--white); margin:0;">واتساب</h4>
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['whatsapp_display'] ?? '' }}</p>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                     <div class="info-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <h4 style="color: var(--white); margin:0;">╪º┘ä╪╣┘å┘ê╪º┘å</h4>
+                            <h4 style="color: var(--white); margin:0;">العنوان</h4>
                             <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['address'] ?? '' }}</p>
                         </div>
                     </div>
@@ -305,7 +305,7 @@
 
                     @if ($showHours)
                     <div style="margin-top: 50px;">
-                        <p style="opacity: 0.8; font-size: 0.9rem;">╪│╪º╪╣╪º╪¬ ╪º┘ä╪╣┘à┘ä:</p>
+                        <p style="opacity: 0.8; font-size: 0.9rem;">ساعات العمل:</p>
                         <p style="color: var(--white); font-weight: bold;">{{ $contact['hours'] ?? '' }}</p>
                     </div>
                     @endif
@@ -314,27 +314,27 @@
                 <div class="contact-form-box">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label style="font-weight: 600;">╪º┘ä╪º╪│┘à ╪º┘ä┘â╪º┘à┘ä</label>
-                            <input type="text" name="fullName" id="fullName" class="form-control" placeholder="╪ú╪»╪«┘ä ╪º╪│┘à┘â" required>
+                            <label style="font-weight: 600;">الاسم الكامل</label>
+                            <input type="text" name="fullName" id="fullName" class="form-control" placeholder="أدخل اسمك" required>
                         </div>
                         <div class="form-group">
-                            <label style="font-weight: 600;">╪▒┘é┘à ╪º┘ä╪¼┘ê╪º┘ä</label>
+                            <label style="font-weight: 600;">رقم الجوال</label>
                             <input type="tel" name="phone" id="phone" class="form-control" placeholder="05xxxxxxxx" required>
                         </div>
                         <div class="form-group">
-                            <label style="font-weight: 600;">┘å┘ê╪╣ ╪º┘ä╪«╪»┘à╪⌐</label>
+                            <label style="font-weight: 600;">نوع الخدمة</label>
                             <select name="serviceType" id="serviceType" class="form-control" required>
-                                <option value="" selected disabled>╪º╪«╪¬╪▒ ┘å┘ê╪╣ ╪º┘ä╪«╪»┘à╪⌐...</option>
+                                <option value="" selected disabled>اختر نوع الخدمة...</option>
                                 @foreach ($services['tabs'] ?? [] as $tab)
                                     <option>{{ $tab['title'] ?? '' }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <label style="font-weight: 600;">╪¬┘ü╪º╪╡┘è┘ä ╪º┘ä╪╖┘ä╪¿</label>
-                            <textarea name="details" id="details" class="form-control" rows="4" placeholder="╪º╪┤╪▒╪¡ ┘ä┘å╪º ╪╖┘ä╪¿┘â ╪¿╪º╪«╪¬╪╡╪º╪▒..." required></textarea>
+                            <label style="font-weight: 600;">تفاصيل الطلب</label>
+                            <textarea name="details" id="details" class="form-control" rows="4" placeholder="اشرح لنا طلبك باختصار..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; font-family:Cairo, Sans;">╪Ñ╪▒╪│╪º┘ä ╪º┘ä╪╖┘ä╪¿</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-family:Cairo, Sans;">إرسال الطلب</button>
                     </form>
                 </div>
             </div>
@@ -347,21 +347,21 @@
             <div class="footer-grid">
                 <div>
                     <a href="#" class="footer-logo">
-                        ┘ü╪▓╪╣╪⌐ <span>┘ä┘ä╪«╪»┘à╪º╪¬</span>
+                        فزعة <span>للخدمات</span>
                     </a>
-                    <p>╪«╪»┘à╪º╪¬ ╪¡┘â┘ê┘à┘è╪⌐ ┘à╪¬╪«╪╡╪╡╪⌐ ┘å┘ç╪»┘ü ┘ä╪¬╪¿╪│┘è╪╖ ╪º┘ä╪Ñ╪¼╪▒╪º╪í╪º╪¬ ┘ê╪¬┘ê┘ü┘è╪▒ ╪º┘ä┘ê┘é╪¬ ┘ê╪º┘ä┘à╪¼┘ç┘ê╪» ╪╣┘ä┘ë ╪╣┘à┘ä╪º╪ª┘å╪º ╪º┘ä┘â╪▒╪º┘à.</p>
+                    <p>خدمات حكومية متخصصة نهدف لتبسيط الإجراءات وتوفير الوقت والمجهود على عملائنا الكرام.</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--white); margin-bottom: 20px;">╪▒┘ê╪º╪¿╪╖ ╪│╪▒┘è╪╣╪⌐</h4>
+                    <h4 style="color: var(--white); margin-bottom: 20px;">روابط سريعة</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">╪«╪»┘à╪º╪¬┘å╪º</a></li>
-                        <li><a href="#about">┘à┘å ┘å╪¡┘å</a></li>
-                        <li><a href="#steps">┘â┘è┘ü ┘å╪╣┘à┘ä</a></li>
-                        <li><a href="#contact">╪º╪¬╪╡┘ä ╪¿┘å╪º</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#steps">كيف نعمل</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--white); margin-bottom: 20px;">╪¬╪º╪¿╪╣┘å╪º</h4>
+                    <h4 style="color: var(--white); margin-bottom: 20px;">تابعنا</h4>
                     <div class="social-links" style="display: flex; gap: 15px;">
                         <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 5px; color: var(--white);">
                             <i class="fa-brands fa-twitter"></i>
@@ -376,8 +376,8 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>╪¼┘à┘è╪╣ ╪º┘ä╪¡┘é┘ê┘é ┘à╪¡┘ü┘ê╪╕╪⌐ &copy; 2023 ┘à┘â╪¬╪¿ ┘ü╪▓╪╣╪⌐ ┘ä┘ä╪«╪»┘à╪º╪¬ ╪º┘ä╪¡┘â┘ê┘à┘è╪⌐</p>
-                <p>╪¬╪╖┘ê┘è╪▒ ┘ê╪¬┘å┘ü┘è╪░ <a href="https://wa.me/201097155272" style="color:#fff">┘å╪╕╪º┘à ╪│┘ê┘ü╪¬</a></p>
+                <p>جميع الحقوق محفوظة &copy; 2023 مكتب فزعة للخدمات الحكومية</p>
+                <p>تطوير وتنفيذ <a href="https://wa.me/201097155272" style="color:#fff">نظام سوفت</a></p>
             </div>
         </div>
     </footer>
@@ -385,7 +385,7 @@
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fa-solid fa-circle-check"></i>
-        <span>{{ $contact['toast'] ?? '╪¬┘à ╪º╪│╪¬┘ä╪º┘à ╪╖┘ä╪¿┘â ╪¿┘å╪¼╪º╪¡! ╪│┘å╪¬┘ê╪º╪╡┘ä ┘à╪╣┘â ┘é╪▒┘è╪¿╪º┘ï.' }}</span>
+        <span>{{ $contact['toast'] ?? 'تم استلام طلبك بنجاح! سنتواصل معك قريباً.' }}</span>
     </div>
 
     <!-- Floating WhatsApp -->
@@ -395,8 +395,8 @@
         id="whatsappFloat"
         target="_blank"
         rel="noopener"
-        aria-label="╪¬┘ê╪º╪╡┘ä ┘à╪╣┘å╪º ╪╣╪¿╪▒ ┘ê╪º╪¬╪│╪º╪¿"
-        title="┘ê╪º╪¬╪│╪º╪¿"
+        aria-label="تواصل معنا عبر واتساب"
+        title="واتساب"
     >
         <i class="fa-brands fa-whatsapp"></i>
     </a>
