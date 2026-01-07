@@ -138,8 +138,8 @@
                             </div>
                         </div>
                         <div style="text-align: right; margin-bottom: 10px;">
-                            <h4 style="margin:0; font-size: 1.1rem; color: var(--accent-color);">تجديد الهوية الوطنية</h4>
-                            <p style="font-size: 0.8rem; opacity: 0.8; margin:0;">وزارة الداخلية - أبشر</p>
+                            <h4 style="margin:0; font-size: 1.1rem; color: var(--accent-color);">تجديد السجل التجاري</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8; margin:0;">وزارة التجارة</p>
                         </div>
                         <div class="status-line"></div>
                         <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 10px;">
@@ -228,7 +228,7 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2>خدماتنا المميزة</h2>
-                <p>نغطي كافة احتياجاتك من الخدمات الحكومية الإلكترونية والورقية</p>
+                <p>نغطي كافة إحتياجاتك من الخدمات الحكومية والتجارية والإلكترونية</p>
             </div>
             
             <div class="tabs">
@@ -289,7 +289,7 @@
             <div class="about-wrapper">
                 <div class="about-features fade-in">
                     <div class="section-header" style="text-align: right;">
-                        <h2>لماذا تختار خدماتنا؟</h2>
+                        <h2>لماذا نحن ؟</h2>
                     </div>
                     
                     @foreach ($features as $feature)
