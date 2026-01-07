@@ -86,7 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     `تفاصيل الطلب: ${details}`
                 ].join('\n');
 
-                const baseWhatsapp = contactForm.dataset.whatsapp || 'https://wa.me/966534018865';
+                const baseWhatsapp = contactForm.dataset.whatsapp || '';
+                if (!baseWhatsapp) {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                }
                 const whatsappUrl = `${baseWhatsapp}?text=${encodeURIComponent(message)}`;
 
                 // Try opening in a new tab; fallback to current tab if blocked

@@ -26,12 +26,16 @@
     $stepsData = Setting::getValue('steps', HomepageDefaults::steps());
     $services = Setting::getValue('services', HomepageDefaults::services());
     $contact = Setting::getValue('contact', HomepageDefaults::contact());
+    $contactDefaults = HomepageDefaults::contact();
     $showPhone = $contact['show_phone'] ?? true;
     $showWhatsapp = $contact['show_whatsapp'] ?? true;
     $showAddress = $contact['show_address'] ?? true;
     $showHours = $contact['show_hours'] ?? true;
-    $whatsNumber = preg_replace('/\D+/', '', $contact['whatsapp_display'] ?? '966534018865');
-    $whatsappLink = $whatsNumber ? "https://wa.me/{$whatsNumber}" : 'https://wa.me/966534018865';
+    $defaultWhatsappNumber = preg_replace('/\D+/', '', $contactDefaults['whatsapp_display'] ?? '');
+    $rawWhatsapp = $contact['whatsapp_display'] ?? ($contactDefaults['whatsapp_display'] ?? '');
+    $whatsNumber = preg_replace('/\D+/', '', $rawWhatsapp);
+    $whatsNumber = $whatsNumber ?: $defaultWhatsappNumber;
+    $whatsappLink = $whatsNumber ? "https://wa.me/{$whatsNumber}" : '';
 
     $newsTicker = Setting::getValue('news_ticker', HomepageDefaults::newsTicker());
 @endphp
@@ -364,7 +368,10 @@
                 </div>
 
                 <div class="contact-form-box">
-                    <form id="contactForm">
+                    <form
+                        id="contactForm"
+                        data-whatsapp="{{ $whatsappLink ?: ($defaultWhatsappNumber ? "https://wa.me/{$defaultWhatsappNumber}" : '') }}"
+                    >
                         <div class="form-group">
                             <label style="font-weight: 600;">الاسم الكامل</label>
                             <input type="text" name="fullName" id="fullName" class="form-control" placeholder="أدخل اسمك" required>
@@ -438,7 +445,7 @@
 
     <!-- Floating WhatsApp -->
     <a
-        href="{{ $whatsappLink }}"
+        href="{{ $whatsappLink ?: ($defaultWhatsappNumber ? "https://wa.me/{$defaultWhatsappNumber}" : '#') }}"
         class="whatsapp-float"
         id="whatsappFloat"
         target="_blank"

@@ -9,11 +9,11 @@
             <div class="grid">
                 <div>
                     <label>رقم الجوال الظاهر</label>
-                    <input type="text" name="phone_display" value="{{ old('phone_display', $contact['phone_display'] ?? '') }}" placeholder="+966 50 123 4567">
+                    <input type="text" name="phone_display" value="{{ old('phone_display', $contact['phone_display'] ?? '') }}" placeholder="++966534018865">
                 </div>
                 <div>
                     <label>رقم واتساب</label>
-                    <input type="text" name="whatsapp_display" value="{{ old('whatsapp_display', $contact['whatsapp_display'] ?? '') }}" placeholder="+966 50 123 4567">
+                    <input type="text" name="whatsapp_display" value="{{ old('whatsapp_display', $contact['whatsapp_display'] ?? '') }}" placeholder="++966534018865">
                 </div>
                 <div>
                     <label>العنوان</label>
