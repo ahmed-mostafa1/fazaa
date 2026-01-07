@@ -758,6 +758,13 @@
             font-size: 1.2rem;
         }
 
+        .contact-number {
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            text-align: left;
+            display: inline-block;
+        }
+
         /* --- Footer --- */
         footer {
             background: var(--primary-dark);

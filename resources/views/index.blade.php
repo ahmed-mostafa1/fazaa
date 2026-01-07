@@ -330,7 +330,7 @@
                         <i class="fa-solid fa-phone-volume"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">رقم الجوال</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['phone_display'] ?? '' }}</p>
+                            <p class="contact-number" style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['phone_display'] ?? '' }}</p>
                         </div>
                     </div>
                     @endif
@@ -340,7 +340,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
                             <h4 style="color: var(--white); margin:0;">واتساب</h4>
-                            <p style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['whatsapp_display'] ?? '' }}</p>
+                            <p class="contact-number" style="opacity: 0.9; font-size: 0.9rem;">{{ $contact['whatsapp_display'] ?? '' }}</p>
                         </div>
                     </div>
                     @endif
@@ -584,4 +584,3 @@
 
 </body>
 </html>
-
