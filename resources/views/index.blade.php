@@ -13,7 +13,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}?v={{ filemtime(public_path('assets/css/index.css')) }}">
 
 </head>
 <body>
@@ -83,6 +83,12 @@
         }
         body.has-ticker #hero {
             padding-top: 140px; 
+        }
+
+        @media (max-width: 768px) {
+            body.has-ticker #hero {
+                padding-top: calc(200px + env(safe-area-inset-top));
+            }
         }
         
         .news-ticker-wrapper {

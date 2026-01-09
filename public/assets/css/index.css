@@ -868,7 +868,7 @@
             }
 
             .hero-text h1 {
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 1.35;
                 word-break: break-word;
                 overflow-wrap: anywhere;
@@ -948,7 +948,7 @@
 
         @media (max-width: 480px) {
             .hero-text h1 {
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 1.3;
             }
         }
