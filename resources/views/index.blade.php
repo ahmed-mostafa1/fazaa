@@ -115,7 +115,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
-                    <h1>{{ $hero['title'] ?? '' }} <br> بـ <span>{{ $hero['highlight'] ?? '' }}</span></h1>
+                    <h1 class="hero-h1">{{ $hero['title'] ?? '' }} <br> بـ <span>{{ $hero['highlight'] ?? '' }}</span></h1>
                     <p>{{ $hero['description'] ?? '' }}</p>
                     <div class="cta-group">
                         @if (!empty($hero['cta_primary_text']))
@@ -525,8 +525,12 @@
         .tab-buttons {
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         .tab-pane {
