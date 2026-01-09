@@ -81,8 +81,6 @@
             background: rgba(255,255,255,0.95); /* Fallback */
             border-top: 1px solid rgba(0,0,0,0.05);
         }
-        /* Adjust hero padding since we have a ticker now part of fixed header */
-        /* Header is roughly 80px. Ticker is ~45px. Total ~125px. */
         body.has-ticker #hero {
             padding-top: 140px; 
         }
